@@ -11,3 +11,4 @@ export const changeToDarkTheme = () => {
         type: actionTypes.SET_DARK_THEME
     };
 };
+
