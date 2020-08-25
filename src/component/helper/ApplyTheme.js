@@ -1,7 +1,7 @@
 
 import React, { Fragment, useEffect } from "react";
 import { connect } from "react-redux";
-import {getColorsByTheme} from "../resources/themes";
+import {getColorsByTheme} from "../../resources/themes";
 
 const ApplyTheme = ({ theme, children }) => {
     const colors = getColorsByTheme(theme);
@@ -9,7 +9,6 @@ const ApplyTheme = ({ theme, children }) => {
     const updateCSSVariables = colors => {
         const arrayOfVariableKeys = Object.keys(colors);
         const arrayOfVariableValues = Object.values(colors);
-        console.log(arrayOfVariableKeys)
 
         //Loop through each array key and set the CSS Variables
         arrayOfVariableKeys.forEach((cssVariableKey, index) => {
