@@ -1,3 +1,7 @@
 .title {
     color: var(--highlighted-text)
 }
+
+.main {
+    background-color: var(--background-color);
+}

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './component/app/App';
 import * as serviceWorker from './config/serviceWorker';
+import './assets/fonts/CodeProLC.otf'
 
 ReactDOM.render(
     <App/>,
