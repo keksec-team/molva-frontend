@@ -1,10 +1,10 @@
 export let colors = {
     dark: {
-        highlightedText: "#f3dfa2",
-        background: ""
+        "--highlighted-text": "#f3dfa2",
+        "--background-color": ""
     },
     light: {
-        highlightedText: "#f3dfa2",
-        background: ""
+        "--highlighted-text": "#000000",
+        "--background-color": ""
     }
 }

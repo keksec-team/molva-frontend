@@ -1,4 +1,4 @@
-import {actions} from "../actions";
+import {actionTypes} from "../actions/actionTypes";
 import {locales} from "../../resources/languages";
 
 const initialState = {
@@ -7,11 +7,11 @@ const initialState = {
 
 export default function (state = initialState, action) {
     switch (action.type) {
-        case actions.SET_RUSSIAN_LOCALE:
+        case actionTypes.SET_RUSSIAN_LOCALE:
             return {
                 locale: locales.RUSSIAN_LOCALE
             }
-        case actions.SET_ENGLISH_LOCALE:
+        case actionTypes.SET_ENGLISH_LOCALE:
             return {
                 locale: locales.ENGLISH_LOCALE
             }
