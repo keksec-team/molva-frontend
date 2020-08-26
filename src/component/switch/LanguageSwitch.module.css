@@ -1,1 +1,31 @@
-/*TODO write implementation*/
+.localesContainer {
+    position: fixed;
+    line-height: 10vmin;
+    bottom: 0;
+    right: 0;
+}
+
+.localesContainer > * {
+    vertical-align: middle;
+}
+
+.switch {
+    float: right;
+    list-style-type: none;
+    padding-right: 4vmin;
+}
+
+.switch > li {
+    cursor: pointer;
+}
+
+ul > * {
+    color: var(--default-text);
+}
+
+.languageListElement {
+    display: inline;
+    font-size: 1.3em;
+    padding-right: 1vmin;
+    padding-left: 1vmin;
+}

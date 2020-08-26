@@ -2,6 +2,7 @@ import React from "react";
 import {connect} from 'react-redux';
 import {getStringsByLocale} from "../../resources/languages";
 import Navbar from "../navbar/Navbar";
+import LanguageSwitch from "../switch/LanguageSwitch";
 
 
 function Main(props) {
@@ -11,6 +12,7 @@ function Main(props) {
         <div className="main">
             {/*this is temporary demo implementation of this component*/}
             <Navbar/>
+            <LanguageSwitch/>
         </div>
     );
 }

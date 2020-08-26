@@ -9,7 +9,7 @@ body {
 
 @font-face {
   font-family: 'CodeProLC';
-  src: local('CodeProLC'), url(./assets/fonts/CodeProLC.otf);
+  src: local('CodeProLC'), url(./assets/fonts/CodeProLC.otf) format("opentype");
 }
 
 code {

@@ -4,13 +4,17 @@ export let strings = {
         projects: "Проекты",
         teams: "Команды",
         about: "О нас",
-        contacts: "Контакты"
+        contacts: "Контакты",
+        englishLocale: "en",
+        russianLocale: "ru"
     },
     english: {
         main: "Main",
         projects: "Projects",
         teams: "Teams",
         about: "About",
-        contacts: "Contacts"
+        contacts: "Contacts",
+        englishLocale: "en",
+        russianLocale: "ru"
     }
 }

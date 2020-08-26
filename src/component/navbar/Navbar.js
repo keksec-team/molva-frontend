@@ -10,11 +10,11 @@ function Navbar(props) {
         <div className={styles.navbar}>
             <img src={require('../../assets/logo.png')} className={styles.logo} alt="Logotype"/>
             <ul className={styles.links}>
-                <li><a href="main">{strings.main}</a></li>
-                <li><a href="projects">{strings.projects}</a></li>
-                <li><a href="teams">{strings.teams}</a></li>
-                <li><a href="contacts">{strings.contacts}</a></li>
-                <li><a href="about">{strings.about}</a></li>
+                <li className={styles.navListElement}><a className={styles.navlink} href="main">{strings.main}</a></li>
+                <li className={styles.navListElement}><a className={styles.navlink} href="projects">{strings.projects}</a></li>
+                <li className={styles.navListElement}><a className={styles.navlink} href="teams">{strings.teams}</a></li>
+                <li className={styles.navListElement}><a className={styles.navlink} href="contacts">{strings.contacts}</a></li>
+                <li className={styles.navListElement}><a className={styles.navlink} href="about">{strings.about}</a></li>
             </ul>
         </div>
     );

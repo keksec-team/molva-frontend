@@ -1,5 +1,6 @@
 :root {
   --highlighted-text: #f3dfa2;
   --background-color: #1e212b;
+  --default-text: #fff;
   background-color: var(--background-color);
 }

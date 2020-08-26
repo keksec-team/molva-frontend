@@ -24,11 +24,11 @@
     list-style-type: none;
 }
 
-li {
+.navListElement {
     display: inline;
 }
 
-li a {
+.navlink {
     color: var(--highlighted-text);
     padding-right: 5vmin;
     padding-left: 5vmin;
