@@ -70,7 +70,6 @@
         width: 40%;
         height: 100%;
         right: 0;
-        display: none;
         position: fixed;
     }
 
@@ -83,36 +82,5 @@
         margin: 0;
     }
 
-    .slideInAnimation {
-        animation: linear 1 alternate;
-        animation-name: slideInRight;
-        animation-duration: 0.2s;
-        animation-fill-mode: forwards;
-    }
-
-    .slideOutAnimation {
-        animation: linear 1 alternate;
-        animation-name: slideOutRight;
-        animation-duration: 0.2s;
-        animation-fill-mode: forwards;
-    }
-}
-
-@keyframes slideInRight {
-    0%{
-        right: -100%;
-    }
-    100%{
-        right:0;
-    }
-}
-
-@keyframes slideOutRight {
-    0%{
-        right: 0;
-    }
-    100%{
-        right: -100%;
-    }
 }
 
