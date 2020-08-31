@@ -37,12 +37,13 @@
     padding-right: 5vmin;
     padding-left: 5vmin;
     text-decoration: none;
-    font-size: 1.3em;
+    font-size: var(--controls-font-size);
 }
 
 .toggleLabel {
+    color: var(--highlighted-text);
     margin: 0 1vmin 0 0;
-    font-size: 1.3em;
+    font-size: var(--controls-font-size);
     line-height: 10vmin;
     display: none;
 }
@@ -51,7 +52,6 @@
     .navlink {
         padding-right: 2.5vmin;
         padding-left: 2.5vmin;
-        font-size: 1em;
     }
 }
 
