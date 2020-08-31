@@ -1,17 +1,17 @@
 export let strings = {
     russian: {
-        main: "Главная",
+        home: "Главная",
         projects: "Проекты",
-        teams: "Команды",
+        creators: "Участники",
         about: "О нас",
         contacts: "Контакты",
         englishLocale: "en",
         russianLocale: "ru"
     },
     english: {
-        main: "Main",
+        home: "Home",
         projects: "Projects",
-        teams: "Teams",
+        creators: "Creators",
         about: "About",
         contacts: "Contacts",
         englishLocale: "en",

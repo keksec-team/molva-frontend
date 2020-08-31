@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import Main from "../main/Main";
+import Main from "./main/Main";
 import {Provider} from 'react-redux';
 import store from "../../store/store";
-import ApplyTheme from "../helper/ApplyTheme";
+import ApplyTheme from "./helper/ApplyTheme";
 
 function App() {
     return (

@@ -1,0 +1,118 @@
+.nav {
+    line-height: 10vmin;
+    height: 10vmin;
+    text-align: right;
+}
+
+.menu {
+    position: fixed;
+    margin: 0 1vmin 0 0;
+    width: 100%;
+}
+
+.navbar > * {
+    vertical-align: middle;
+}
+
+.logo {
+    height: 5vmin;
+    width: 3.3vmin;
+    padding-right: 5vmin;
+    padding-left: 5vmin;
+}
+
+.links {
+    margin: 0;
+    padding: 0;
+    float: right;
+    list-style-type: none;
+}
+
+.navListElement {
+    display: inline;
+}
+
+.navlink {
+    color: var(--highlighted-text);
+    padding-right: 5vmin;
+    padding-left: 5vmin;
+    text-decoration: none;
+    font-size: 1.3em;
+}
+
+.toggleLabel {
+    margin: 0 1vmin 0 0;
+    font-size: 1.3em;
+    line-height: 10vmin;
+    display: none;
+}
+
+@media only screen and (max-width: 1200px) {
+    .navlink {
+        padding-right: 2.5vmin;
+        padding-left: 2.5vmin;
+        font-size: 1em;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .logo {
+        display: none;
+    }
+
+    .toggleLabel {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu {
+        text-align: center;
+        width: 40%;
+        height: 100%;
+        right: 0;
+        display: none;
+        position: fixed;
+    }
+
+    .active {
+        display: block !important;
+    }
+
+    .links li {
+        display: block;
+        margin: 0;
+    }
+
+    .slideInAnimation {
+        animation: linear 1 alternate;
+        animation-name: slideInRight;
+        animation-duration: 0.2s;
+        animation-fill-mode: forwards;
+    }
+
+    .slideOutAnimation {
+        animation: linear 1 alternate;
+        animation-name: slideOutRight;
+        animation-duration: 0.2s;
+        animation-fill-mode: forwards;
+    }
+}
+
+@keyframes slideInRight {
+    0%{
+        right: -100%;
+    }
+    100%{
+        right:0;
+    }
+}
+
+@keyframes slideOutRight {
+    0%{
+        right: 0;
+    }
+    100%{
+        right: -100%;
+    }
+}
+

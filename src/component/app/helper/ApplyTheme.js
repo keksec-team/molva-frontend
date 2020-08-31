@@ -1,7 +1,7 @@
 
 import React, { Fragment, useEffect } from "react";
 import { connect } from "react-redux";
-import {getColorsByTheme} from "../../resources/themes";
+import {getColorsByTheme} from "../../../resources/themes";
 
 const ApplyTheme = ({ theme, children }) => {
     const colors = getColorsByTheme(theme);

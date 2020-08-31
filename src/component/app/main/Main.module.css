@@ -3,5 +3,6 @@
 }
 
 .main {
-    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
 }
