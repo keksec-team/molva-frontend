@@ -4,5 +4,5 @@
   --default-text: #fff;
   --text-color-gray: #858892;
   background-color: var(--background-color);
-  --controls-font-size: 1.3em;
+  --controls-font-size: 1em;
 }

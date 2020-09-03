@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: CodeProLC, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -10,6 +10,11 @@ body {
 @font-face {
   font-family: 'CodeProLC';
   src: local('CodeProLC'), url(./assets/fonts/CodeProLC.otf) format("opentype");
+}
+
+@font-face {
+  font-family: 'Comfortaa';
+  src: local('Comfortaa'), url(./assets/fonts/Comfortaa.ttf) format("truetype");
 }
 
 code {

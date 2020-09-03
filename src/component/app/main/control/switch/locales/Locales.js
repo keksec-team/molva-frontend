@@ -8,19 +8,17 @@ function Locales(props) {
     const {dispatch} = props;
     let strings = getStringsByLocale(props.locale);
     return (
-            <div >
-                <ul className={styles.switch}>
-                    <li className={styles.languageListElement}
-                        onClick={() => changeLanguage(locales.ENGLISH_LOCALE, dispatch)}>
-                        {strings.englishLocale}
-                    </li>
-                    <span className={styles.languageListElement}>|</span>
-                    <li className={styles.languageListElement}
-                        onClick={() => changeLanguage(locales.RUSSIAN_LOCALE, dispatch)}>
-                        {strings.russianLocale}
-                    </li>
-                </ul>
-            </div>
+        <ul className={styles.switch}>
+            <li className={styles.languageListElement}
+                onClick={() => changeLanguage(locales.ENGLISH_LOCALE, dispatch)}>
+                {strings.englishLocale}
+            </li>
+            <span className={styles.languageListElement}>|</span>
+            <li className={styles.languageListElement}
+                onClick={() => changeLanguage(locales.RUSSIAN_LOCALE, dispatch)}>
+                {strings.russianLocale}
+            </li>
+        </ul>
     );
 }
 
