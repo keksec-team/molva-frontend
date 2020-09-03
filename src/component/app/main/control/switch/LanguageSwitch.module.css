@@ -20,10 +20,11 @@
 }
 
 ul > * {
-    color: var(--default-text);
+    color: var(--text-color-gray);
 }
 
 .languageListElement {
+    color: var(--text-color-gray);
     display: inline;
     font-size: 1.3em;
     padding-right: 1vmin;

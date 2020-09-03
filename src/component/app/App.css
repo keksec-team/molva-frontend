@@ -2,6 +2,7 @@
   --highlighted-text: #f3dfa2;
   --background-color: #1e212b;
   --default-text: #fff;
+  --text-color-gray: #858892;
   background-color: var(--background-color);
   --controls-font-size: 1.3em;
 }

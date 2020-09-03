@@ -2,6 +2,7 @@
     line-height: 10vmin;
     height: 10vmin;
     text-align: right;
+    color: var(--text-color-gray);
 }
 
 .menu {
@@ -15,8 +16,11 @@
 }
 
 .logo {
+    float: left;
+    position: relative;
     height: 5vmin;
     width: 3.3vmin;
+    padding-top: 4vmin;
     padding-right: 5vmin;
     padding-left: 5vmin;
 }
@@ -33,7 +37,7 @@
 }
 
 .navlink {
-    color: var(--highlighted-text);
+    color: var(--text-color-gray);
     padding-right: 5vmin;
     padding-left: 5vmin;
     text-decoration: none;
@@ -41,7 +45,6 @@
 }
 
 .toggleLabel {
-    color: var(--highlighted-text);
     margin: 0 1vmin 0 0;
     font-size: var(--controls-font-size);
     line-height: 10vmin;
