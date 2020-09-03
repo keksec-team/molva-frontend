@@ -11,8 +11,12 @@ function Navbar(props) {
     let {width} = useWindowSize();
     return (
         <div className={styles.nav}>
-            <label className={styles.toggleLabel}
-                   onClick={() => changeNavbarToggled(!props.isToggled, dispatch)}>&#9776;</label>
+            <div id={styles.navi} className={`${props.isToggled ? styles.open : ""}`}
+                 onClick={() => changeNavbarToggled(!props.isToggled, dispatch)}>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             {(width <= 600)
                 ? (
                     <Slide direction="left" in={props.isToggled}>
