@@ -11,7 +11,7 @@ function Home(props) {
     let strings = getStringsByLocale(props.locale);
     return (
         <div className={styles.home}>
-            {/*write implementation*/}
+            <button onClick={() => console.log("Ты на меня нажал")}>я кнопка</button>
         </div>
     );
 }

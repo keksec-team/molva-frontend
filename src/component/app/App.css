@@ -3,6 +3,7 @@
   --background-color: #1e212b;
   --default-text: #fff;
   --text-color-gray: #858892;
+  --black-color: #000;
   background-color: var(--background-color);
   --controls-font-size: 1em;
 }

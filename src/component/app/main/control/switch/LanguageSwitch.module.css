@@ -9,6 +9,7 @@
     padding-right: 2.5vw;
     padding-left: 2.5vw;
     margin: 0 1vmin 0 0;
+    z-index: 3;
 }
 
 .localesContainer > * {

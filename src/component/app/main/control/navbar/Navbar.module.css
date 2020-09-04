@@ -1,6 +1,5 @@
 .nav {
     line-height: 10vmin;
-    height: 10vmin;
     text-align: right;
     color: var(--default-text);
     font-family: Comfortaa, serif;
@@ -9,8 +8,8 @@
 
 .menu {
     position: fixed;
-    margin: 0 1vmin 0 0;
     width: 100%;
+    z-index: 2;
 }
 
 .navbar > * {
@@ -24,7 +23,6 @@
     width: 3.3vmin;
     padding-top: 4vmin;
     padding-right: 5vmin;
-    padding-left: 5vmin;
     padding-left: 5vmin;
 }
 
@@ -156,6 +154,10 @@
 }
 
 @media only screen and (max-width: 600px) {
+    .nav {
+        line-height: 0;
+    }
+
     .logo {
         display: none;
     }
@@ -166,6 +168,7 @@
 
     #navi {
         display: block;
+        z-index: 3;
     }
 
     .toggleLabel {
@@ -178,19 +181,22 @@
     }
 
     .menu {
-        margin-top: 10vh;
+        background-color: var(--background-color);
+        width: 30%;
+        height: 100%;
         padding-right: 2.5vw;
         padding-left: 2.5vw;
         text-align: left;
         font-weight: bold;
-        width: 30%;
-        height: 100%;
         right: 0;
-        position: fixed;
     }
 
     .active {
         display: block !important;
+    }
+
+    .links {
+        margin-top: 10vh;
     }
 
     .links li {
@@ -199,7 +205,6 @@
         padding-top: 4vmin;
         padding-bottom: 4vmin;
     }
-
 }
 
 @media only screen and (max-width: 350px) {

@@ -1,5 +1,6 @@
 import React from "react";
 import {connect} from 'react-redux';
+import styles from "./Main.module.css";
 import {getStringsByLocale} from "../../../resources/languages";
 import Navbar from "./control/navbar/Navbar";
 import LanguageSwitch from "./control/switch/LanguageSwitch";
@@ -16,7 +17,10 @@ function Main(props) {
             {/*this is temporary demo implementation of this component*/}
             <BrowserRouter>
                 <Navbar/>
-                <Route path="/home" component={Home} />
+                <div className={`${styles.dark} ${props.isToggled ? styles.active : ""}`} />
+                <div className={`${styles.screen} ${props.isToggled ? styles.disabled : ""}`}>
+                    <Route path="/home" component={Home}/>
+                </div>
                 <LanguageSwitch/>
             </BrowserRouter>
         </div>
@@ -25,6 +29,7 @@ function Main(props) {
 
 const mapStateToProps = state => ({
     theme: state.style.theme,
+    isToggled: state.controls.navbarToggled,
     locale: state.language.locale
 })
 

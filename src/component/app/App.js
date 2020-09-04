@@ -7,11 +7,13 @@ import ApplyTheme from "./helper/ApplyTheme";
 
 function App() {
     return (
-        <Provider store={store}>
-            <ApplyTheme>
-                <Main/>
-            </ApplyTheme>
-        </Provider>
+        <div className="app">
+            <Provider store={store}>
+                <ApplyTheme>
+                    <Main/>
+                </ApplyTheme>
+            </Provider>
+        </div>
     );
 }
 
