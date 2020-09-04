@@ -2,8 +2,6 @@ import React from "react";
 import {connect} from 'react-redux';
 import {getStringsByLocale} from "../../../../resources/languages";
 import styles from "./Home.module.css";
-import Navbar from "../control/navbar/Navbar";
-import LanguageSwitch from "../control/switch/LanguageSwitch";
 
 
 function Home(props) {

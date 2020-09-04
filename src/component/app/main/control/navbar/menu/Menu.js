@@ -3,6 +3,7 @@ import styles from "../Navbar.module.css";
 import {connect} from "react-redux";
 import React from "react";
 import {Link} from 'react-router-dom';
+import LanguageSwitch from "../../switch/LanguageSwitch";
 
 function Menu(props) {
     const {dispatch} = props;
@@ -37,6 +38,7 @@ function Menu(props) {
                     </Link>
                 </li>
             </ul>
+            <LanguageSwitch/>
         </div>
     );
 }

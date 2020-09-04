@@ -17,11 +17,8 @@ function Main(props) {
             {/*this is temporary demo implementation of this component*/}
             <BrowserRouter>
                 <Navbar/>
-                <div className={`${styles.dark} ${props.isToggled ? styles.active : ""}`} />
-                <div className={`${styles.screen} ${props.isToggled ? styles.disabled : ""}`}>
-                    <Route path="/home" component={Home}/>
-                </div>
-                <LanguageSwitch/>
+                <Route path="/home" component={Home}/>
+                {/*<LanguageSwitch className={styles.switch}/>*/}
             </BrowserRouter>
         </div>
     );

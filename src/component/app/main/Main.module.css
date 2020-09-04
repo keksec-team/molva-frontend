@@ -6,39 +6,12 @@
     min-height: 100%;
 }
 
-.screen {
-    position: relative;
-    min-height: 100%;
-}
-
-.disabled {
-}
-
-.dark {
-    background-color: black;
-    opacity: 0;
-    -webkit-transition: opacity 200ms linear;
-    -ms-transition: opacity 200ms linear;
-    transition: opacity 200ms linear;
+.switch {
+    display: block;
 }
 
 @media only screen and (max-width: 600px) {
-    .disabled {
-        pointer-events: none;
-        z-index: 1;
-        opacity: 0.2;
-    }
-
-    .dark {
-        position: absolute;
-        left: 0;
-        top: 0;
-        height: 100%;
-        width: 100%;
-        z-index: 0;
-    }
-
-    .active {
-        opacity: 0.2;
+    .switch {
+        display: none;
     }
 }

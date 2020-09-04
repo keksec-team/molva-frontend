@@ -5,6 +5,8 @@ import {Slide} from "@material-ui/core";
 import {changeNavbarToggled} from "../../../../../service/appStateService";
 import useWindowSize from "../helpers/useWindowSize";
 import Menu from "./menu/Menu";
+import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
+import Drawer from "@material-ui/core/Drawer";
 
 function Navbar(props) {
     const {dispatch} = props;
@@ -17,12 +19,15 @@ function Navbar(props) {
                 <span></span>
                 <span></span>
             </div>
-            {(width <= 600)
-                ? (
-                    <Slide direction="left" in={props.isToggled}>
-                        <div><Menu/></div>
-                    </Slide>)
-                : <Menu/>}
+            {
+                (width <= 600) ? (
+                    <Drawer anchor={"right"}
+                            open={props.isToggled}
+                            onClose={() => changeNavbarToggled(!props.isToggled, dispatch)}>
+                        <Menu/>
+                    </Drawer>
+                ) : <Menu/>
+            }
         </div>
     );
 }
