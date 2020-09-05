@@ -27,19 +27,29 @@
     padding-left: 0.4vw;
 }
 
-@media only screen and (max-width: 600px) {
+.locales {
+}
+
+@media only screen and (max-width: 650px) {
     .localesContainer {
         color: var(--text-color-gray);
         bottom: 0;
         right: 0;
+        left: 0;
         margin-right: 0;
         width: 100%;
+    }
+
+    .locales {
+        padding: 0;
+        text-align: center;
     }
 }
 
 @media only screen and (max-width: 350px) {
     .localesContainer {
         font-size: 0.8em;
+        text-align: center;
     }
 }
 

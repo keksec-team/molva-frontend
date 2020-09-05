@@ -8,7 +8,7 @@ function Locales(props) {
     const {dispatch} = props;
     let strings = getStringsByLocale(props.locale);
     return (
-        <ul className={styles.switch}>
+        <ul className={styles.locales}>
             <li className={styles.languageListElement}
                 onClick={() => changeLanguage(locales.ENGLISH_LOCALE, dispatch)}>
                 {strings.englishLocale}
