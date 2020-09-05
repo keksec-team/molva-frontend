@@ -10,7 +10,6 @@ function Menu(props) {
     let strings = getStringsByLocale(props.locale);
     return (
         <div className={styles.menu} id="menu">
-            <img src={require('../../../../../../assets/logo.png')} className={styles.logo} alt="Logotype"/>
             <ul className={styles.links}>
                 <li className={styles.navListElement}>
                     <Link className={styles.navlink} to="/home">
@@ -38,7 +37,9 @@ function Menu(props) {
                     </Link>
                 </li>
             </ul>
-            <LanguageSwitch/>
+            <div className={styles.menuSwitchContainer}>
+                <LanguageSwitch/>
+            </div>
         </div>
     );
 }

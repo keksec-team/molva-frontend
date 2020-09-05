@@ -6,12 +6,18 @@
     min-height: 100%;
 }
 
-.switch {
+.screen {
+    top: 12vmin;
+    position: relative;
+    min-height: calc(100% - 12vmin);
+}
+
+.mainSwitchContainer {
     display: block;
 }
 
-@media only screen and (max-width: 600px) {
-    .switch {
+@media only screen and (max-width: 650px) {
+    .mainSwitchContainer {
         display: none;
     }
 }

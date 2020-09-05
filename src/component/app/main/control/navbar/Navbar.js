@@ -1,33 +1,27 @@
 import styles from "./Navbar.module.css";
 import {connect} from "react-redux";
 import React from "react";
-import {Slide} from "@material-ui/core";
 import {changeNavbarToggled} from "../../../../../service/appStateService";
 import useWindowSize from "../helpers/useWindowSize";
 import Menu from "./menu/Menu";
-import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import Drawer from "@material-ui/core/Drawer";
+import MenuIcon from '@material-ui/icons/Menu';
 
 function Navbar(props) {
     const {dispatch} = props;
     let {width} = useWindowSize();
     return (
         <div className={styles.nav}>
-            <div id={styles.navi} className={`${props.isToggled ? styles.open : ""}`}
-                 onClick={() => changeNavbarToggled(!props.isToggled, dispatch)}>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            {
-                (width <= 600) ? (
-                    <Drawer anchor={"right"}
-                            open={props.isToggled}
-                            onClose={() => changeNavbarToggled(!props.isToggled, dispatch)}>
-                        <Menu/>
-                    </Drawer>
-                ) : <Menu/>
-            }
+            <img src={require('../../../../../assets/logo.png')} className={styles.logo} alt="Logotype"/>
+            <MenuIcon classes={{root: styles.hamburger}}
+                      onClick={() => changeNavbarToggled(!props.isToggled, dispatch)}/>
+            {(width <= 640) ? (
+                <Drawer anchor={"right"}
+                        open={props.isToggled}
+                        onClose={() => changeNavbarToggled(!props.isToggled, dispatch)}>
+                    <Menu/>
+                </Drawer>
+            ) : <Menu/>}
         </div>
     );
 }

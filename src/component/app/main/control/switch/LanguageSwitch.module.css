@@ -2,12 +2,11 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 5vh;
     font-family: Comfortaa, serif;
     font-size: var(--controls-font-size);
     color: var(--default-text);
+    margin-bottom: 3vh;
+    margin-right: 2vw;
 }
 
 .localesContainer > * {
@@ -24,20 +23,23 @@
 
 .languageListElement {
     display: inline;
-    padding-right: 1vw;
-    padding-left: 1vw;
+    padding-right: 0.4vw;
+    padding-left: 0.4vw;
 }
 
 @media only screen and (max-width: 600px) {
     .localesContainer {
         color: var(--text-color-gray);
+        bottom: 0;
+        right: 0;
+        margin-right: 0;
+        width: 100%;
     }
 }
 
 @media only screen and (max-width: 350px) {
     .localesContainer {
         font-size: 0.8em;
-        color: var(--text-color-gray);
     }
 }
 

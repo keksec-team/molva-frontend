@@ -14,11 +14,14 @@ function Main(props) {
     let strings = getStringsByLocale(props.locale);
     return (
         <div className="main">
-            {/*this is temporary demo implementation of this component*/}
             <BrowserRouter>
                 <Navbar/>
-                <Route path="/home" component={Home}/>
-                {/*<LanguageSwitch className={styles.switch}/>*/}
+                <div className={styles.screen}>
+                    <Route path="/home" component={Home}/>
+                </div>
+                <div className={styles.mainSwitchContainer}>
+                    <LanguageSwitch/>
+                </div>
             </BrowserRouter>
         </div>
     );
