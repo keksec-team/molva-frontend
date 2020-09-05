@@ -1,5 +1,5 @@
 import {getStringsByLocale} from "../../../../../../resources/languages";
-import styles from "../Navbar.module.css";
+import styles from "./Menu.module.css";
 import {connect} from "react-redux";
 import React from "react";
 import {Link} from 'react-router-dom';
@@ -12,27 +12,27 @@ function Menu(props) {
         <div className={styles.menu} id="menu">
             <ul className={styles.links}>
                 <li className={styles.navListElement}>
-                    <Link className={styles.navlink} to="/home">
+                    <Link className={styles.navLink} to="/home">
                         {strings.home}
                     </Link>
                 </li>
                 <li className={styles.navListElement}>
-                    <Link className={styles.navlink} to="/projects">
+                    <Link className={styles.navLink} to="/projects">
                         {strings.projects}
                     </Link>
                 </li>
                 <li className={styles.navListElement}>
-                    <Link className={styles.navlink} to="/creators">
+                    <Link className={styles.navLink} to="/creators">
                         {strings.creators}
                     </Link>
                 </li>
                 <li className={styles.navListElement}>
-                    <Link className={styles.navlink} to="/contacts">
+                    <Link className={styles.navLink} to="/contacts">
                         {strings.contacts}
                     </Link>
                 </li>
                 <li className={styles.navListElement}>
-                    <Link className={styles.navlink} to="/about">
+                    <Link className={styles.navLink} to="/about">
                         {strings.about}
                     </Link>
                 </li>

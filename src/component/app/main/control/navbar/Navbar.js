@@ -11,7 +11,7 @@ function Navbar(props) {
     const {dispatch} = props;
     let {width} = useWindowSize();
     return (
-        <div className={styles.nav}>
+        <div className={styles.navbar}>
             <img src={require('../../../../../assets/logo.svg')} className={styles.logo} alt="Logotype"/>
             <MenuIcon classes={{root: styles.hamburger}}
                       onClick={() => changeNavbarToggled(!props.isToggled, dispatch)}/>

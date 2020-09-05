@@ -1,5 +1,5 @@
 import {getStringsByLocale, locales} from "../../../../../../resources/languages";
-import styles from "../LanguageSwitch.module.css";
+import styles from "./Locales.module.css";
 import {connect} from "react-redux";
 import React from "react";
 import {changeLanguage} from "../../../../../../service/appStateService";
