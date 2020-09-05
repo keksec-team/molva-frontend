@@ -1,0 +1,23 @@
+.title {
+    color: var(--highlighted-text)
+}
+
+.main {
+    min-height: 100%;
+}
+
+.screen {
+    top: 12vmin;
+    position: relative;
+    min-height: calc(100% - 12vmin);
+}
+
+.mainSwitchContainer {
+    display: block;
+}
+
+@media only screen and (max-width: 650px) {
+    .mainSwitchContainer {
+        display: none;
+    }
+}

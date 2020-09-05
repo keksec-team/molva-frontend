@@ -1,0 +1,57 @@
+.navbar {
+    background-color: var(--background-color);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 10vmin;
+    line-height: 10vmin;
+    text-align: right;
+    color: var(--default-text);
+    font-family: Comfortaa, serif;
+    font-size: var(--controls-font-size);
+}
+
+.navbar > * {
+    vertical-align: middle;
+}
+
+.logo {
+    float: left;
+    position: relative;
+    height: 3em;
+    width: 2em;
+    margin-left: 2vw;
+    margin-top: 2vw;
+}
+
+.hamburger {
+    right: 0;
+    font-size: var(--controls-font-size);
+    margin-right: 5vw;
+    margin-top: 5vw;
+    display: none !important;
+}
+
+@media only screen and (max-width: 640px) {
+    .hamburger {
+        display: inline-block !important;
+    }
+
+    .navbar {
+        width: 100%;
+    }
+
+    .logo {
+        height: 1.5em;
+        width: 1em;
+        display: block;
+        position: fixed;
+        margin-left: 5vw;
+        margin-top: 5vw;
+    }
+
+    .active {
+        display: block !important;
+    }
+}
+

@@ -1,0 +1,33 @@
+.localesContainer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-family: Comfortaa, serif;
+    font-size: var(--controls-font-size);
+    color: var(--default-text);
+    margin-bottom: 3vh;
+    margin-right: 2vw;
+}
+
+.localesContainer > * {
+    vertical-align: middle;
+}
+
+@media only screen and (max-width: 640px) {
+    .localesContainer {
+        color: var(--text-color-gray);
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .localesContainer {
+        font-size: 0.8em;
+        text-align: center;
+    }
+}
+

@@ -1,0 +1,17 @@
+.languageListElement {
+    display: inline;
+    cursor: pointer;
+    padding-right: 0.4vw;
+    padding-left: 0.4vw;
+}
+
+.locales {
+    list-style-type: none;
+}
+
+@media only screen and (max-width: 640px) {
+    .locales {
+        padding: 0;
+        text-align: center;
+    }
+}

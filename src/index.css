@@ -7,6 +7,26 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+}
+html, body, #root, .app, .main {
+  height: 100%;
+}
+
+@font-face {
+  font-family: 'CodeProLC';
+  src: local('CodeProLC'), url(./assets/fonts/CodeProLC.otf) format("opentype");
+}
+
+@font-face {
+  font-family: 'Comfortaa';
+  src: local('Comfortaa'), url(./assets/fonts/Comfortaa.ttf) format("truetype");
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
