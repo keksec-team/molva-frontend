@@ -27,13 +27,13 @@ function Menu(props) {
                     </Link>
                 </li>
                 <li className={styles.navListElement}>
-                    <Link className={styles.navLink} to="/contacts">
-                        {strings.contacts}
+                    <Link className={styles.navLink} to="/about">
+                        {strings.about}
                     </Link>
                 </li>
                 <li className={styles.navListElement}>
-                    <Link className={styles.navLink} to="/about">
-                        {strings.about}
+                    <Link className={styles.navLink} to="/contacts">
+                        {strings.contacts}
                     </Link>
                 </li>
             </ul>
