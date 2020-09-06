@@ -27,6 +27,16 @@ html, body, #root, .app, .main {
   src: local('Comfortaa'), url(./assets/fonts/Comfortaa.ttf) format("truetype");
 }
 
+@font-face {
+  font-family: 'MyriadPro';
+  src: local('MyriadPro'), url(./assets/fonts/MyriadPro.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: 'MyriadProBold';
+  src: local('MyriadProBold'), url(./assets/fonts/MyriadProBold.otf) format("opentype");
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

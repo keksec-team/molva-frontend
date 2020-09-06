@@ -1,7 +1,5 @@
 .links {
     margin: 0;
-    padding-right: 6vmin;
-    padding-left: 6vmin;
     float: right;
     list-style-type: none;
 }
@@ -32,6 +30,8 @@
 @media only screen and (max-width: 640px) {
     .links {
         margin-top: 10vh;
+        padding-right: 6vmin;
+        padding-left: 6vmin;
     }
 
     .navListElement {

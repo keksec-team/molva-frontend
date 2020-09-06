@@ -1,0 +1,90 @@
+.about {
+}
+
+.text {
+    display: inline-block;
+    max-width: 25vw;
+    margin-left: 12vmin;
+}
+
+.title {
+    color: var(--highlighted-text);
+    font-size: 3em;
+    font-family: CodeProLC, serif;
+}
+
+.description {
+    color: var(--text-color-gray);
+    font-size: 2em;
+    font-family: MyriadProBold, serif;
+}
+
+.paragraph {
+    color: var(--text-color-gray-light);
+    font-size: 1.5em;
+    font-family: MyriadPro, serif;
+}
+
+.pictures {
+    font-size: 1.5em;
+    display: inline-block;
+}
+
+.games .code .product {
+    height: 30vmin;
+    width: 30vmin;
+}
+
+.gamesContainer {
+    /*position*/
+}
+
+.games {
+    /*image size*/
+}
+
+.gamesTitle {
+    /*text style*/
+}
+
+.codeContainer {
+    /*position*/
+}
+
+.code {
+    /*image size*/
+}
+
+.codeTitle {
+    /*text style*/
+}
+
+.productContainer {
+    /*position*/
+}
+
+.product {
+    /*image size*/
+}
+
+.productTitle {
+    /*text style*/
+}
+
+.gamesTitle, .codeTitle, .productTitle {
+    color: var(--text-color-gray-light);
+    font-family: MyriadPro, serif;
+    font-size: 1em;
+}
+
+.contactUs {
+    /*design and inline*/
+}
+
+.ourProjects {
+    /*design and inline*/
+}
+
+.buttons {
+    /*position*/
+}
