@@ -7,6 +7,7 @@ import LanguageSwitch from "./control/switch/LanguageSwitch";
 import {BrowserRouter} from "react-router-dom";
 import {Route} from "react-router";
 import Home from "./home/Home";
+import About from "./about/About";
 
 
 function Main(props) {
@@ -18,6 +19,7 @@ function Main(props) {
                 <Navbar/>
                 <div className={styles.screen}>
                     <Route path="/home" component={Home}/>
+                    <Route path="/about" component={About}/>
                 </div>
                 <div className={styles.mainSwitchContainer}>
                     <LanguageSwitch/>

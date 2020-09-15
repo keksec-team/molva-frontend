@@ -1,5 +1,5 @@
 .localesContainer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     right: 0;
     font-family: Comfortaa, serif;
@@ -13,8 +13,9 @@
     vertical-align: middle;
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 650px) {
     .localesContainer {
+        position: absolute;
         color: var(--text-color-gray);
         bottom: 0;
         right: 0;

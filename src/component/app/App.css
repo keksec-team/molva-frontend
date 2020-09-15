@@ -3,7 +3,24 @@
   --background-color: #1e212b;
   --default-text: #fff;
   --text-color-gray: #858892;
+  --text-color-gray-light: #adadad;
   --black-color: #000;
   background-color: var(--background-color);
   --controls-font-size: 1em;
+}
+
+button, button:focus{
+  outline: none;
+  color: var(--text-color-gray-light);
+  cursor: pointer;
+  background: transparent;
+  border: 0.1em solid var(--text-color-gray-light);
+  border-radius: 0.3em;
+  padding: 0.3em 0.6em;
+}
+
+button:hover {
+  background-color: var(--highlighted-text);
+  color: var(--background-color);
+  border: 0.1em solid var(--highlighted-text);
 }

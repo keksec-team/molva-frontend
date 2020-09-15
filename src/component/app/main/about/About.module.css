@@ -1,0 +1,146 @@
+.about {
+}
+
+.text {
+    display: inline-block;
+    width: 30%;
+    margin-left: 6vw;
+}
+
+.title {
+    color: var(--highlighted-text);
+    font-size: 3em;
+    font-family: CodeProLC, serif;
+}
+
+.description {
+    color: var(--text-color-gray);
+    font-size: 2em;
+    font-family: MyriadProBold, serif;
+}
+
+.paragraph {
+    color: var(--text-color-gray-light);
+    font-size: 1.5em;
+    font-family: MyriadPro, serif;
+}
+
+.pictures {
+    position: absolute;
+    margin-top: 10vh;
+    font-size: 1.5em;
+    display: inline-block;
+    text-align: center;
+    width: calc(70% - 6vw);
+}
+
+.games .code .product {
+    height: 30vmin;
+    width: 30vmin;
+}
+
+.gamesContainer {
+    display: inline-block;
+    margin-right: 5vw;
+}
+
+.games, .product {
+    height: 14vmin;
+    width: 14vmin;
+}
+
+.code {
+    height: 12vmin;
+    width: 12vmin;
+}
+
+.gamesTitle {
+    /*text style*/
+}
+
+.codeContainer {
+    display: inline-block;
+    margin-left: 5vw;
+}
+
+.codeTitle {
+    /*text style*/
+}
+
+.productContainer {
+    /*position*/
+}
+
+.productTitle {
+    /*text style*/
+}
+
+.gamesTitle, .codeTitle, .productTitle {
+    color: var(--text-color-gray-light);
+    font-family: MyriadPro, serif;
+    font-size: 1em;
+}
+
+.contactUs, .ourProjects {
+    font-size: 1em;
+    margin: 0.8vw;
+}
+
+.buttons {
+    /*position*/
+}
+
+
+@media only screen and (max-width: 650px) {
+    .text {
+        display: block;
+        margin: 0;
+        width: auto;
+        padding: 10vw;
+
+    }
+
+    .pictures {
+        position: static;
+        margin: 0;
+        display: block;
+        width: auto;
+        padding: 10vw;
+    }
+
+    .games, .product {
+        height: 22vmin;
+        width: 22vmin;
+    }
+
+    .code {
+        height: 20vmin;
+        width: 20vmin;
+    }
+
+    .codeContainer {
+        margin-left: 8vw;
+    }
+
+    .gamesContainer {
+        margin-right: 8vw;
+    }
+
+    .contactUs, .ourProjects {
+        display: inline-block;
+        font-size: 0.7em;
+        margin: 5vh 0 0;
+    }
+
+    .contactUs {
+        margin-right: 2vw;
+    }
+
+    .ourProjects {
+        margin-left: 2vw;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+
+}
