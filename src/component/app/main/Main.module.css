@@ -9,6 +9,7 @@
 .screen {
     top: 15vmin;
     position: relative;
+    z-index: 0;
     min-height: calc(100% - 15vmin);
 }
 

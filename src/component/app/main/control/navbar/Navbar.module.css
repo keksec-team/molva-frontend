@@ -9,6 +9,7 @@
     color: var(--default-text);
     font-family: Comfortaa, serif;
     font-size: var(--controls-font-size);
+    z-index: 1;
 }
 
 .navbar > * {

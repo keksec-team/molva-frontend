@@ -15,16 +15,16 @@ function About(props) {
                 <p className={styles.paragraph}>{strings.aboutParagraph}</p>
             </div>
             <div className={styles.pictures}>
-                <div className={styles.gamesContainer}>
-                    {/*<img src={require('../../../../../assets/games.png')} className={styles.games} alt="Games"/>*/}
-                    <p className={styles.gamesTitle}>{strings.gamesTitle}</p>
-                </div>
-                <div className={styles.codeContainer}>
-                    {/*<img src={require('../../../../../assets/code.png')} className={styles.code} alt="Code"/>*/}
-                    <p className={styles.codeTitle}>{strings.codeTitle}</p>
-                </div>
+                    <div className={styles.gamesContainer}>
+                        <img src={require('../../../../assets/console.svg')} className={styles.games} alt="Games"/>
+                        <p className={styles.gamesTitle}>{strings.gamesTitle}</p>
+                    </div>
+                    <div className={styles.codeContainer}>
+                        <img src={require('../../../../assets/code.svg')} className={styles.code} alt="Code"/>
+                        <p className={styles.codeTitle}>{strings.codeTitle}</p>
+                    </div>
                 <div className={styles.productContainer}>
-                    {/*<img src={require('../../../../../assets/product.png')} className={styles.product} alt="Product"/>*/}
+                    <img src={require('../../../../assets/product.svg')} className={styles.product} alt="Product"/>
                     <p className={styles.productTitle}>{strings.productTitle}</p>
                 </div>
                 <div className={styles.buttons}>
