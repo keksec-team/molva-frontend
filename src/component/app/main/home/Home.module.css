@@ -1,2 +1,78 @@
 .home {
 }
+
+.preview {
+    width: 120vmin;
+    height: 75vmin;
+    object-fit: cover;
+    position: absolute;
+    right: 0;
+    opacity: 1;
+    transition: opacity 0.2s linear;
+    border-left: 6px solid var(--highlighted-text);
+    border-top: 6px solid var(--highlighted-text);
+    border-bottom: 6px solid var(--highlighted-text);
+    border-radius: 0.3em 0 0 0.3em;
+}
+
+.hr {
+    display: inline-block;
+    width: 18vmin;
+    cursor: pointer;
+    height: 0.5vmin;
+    margin: 0 3.5vmin;
+    border-radius: 0.3em;
+    background-color: var(--text-color-gray-light);
+}
+
+.hr.active {
+    background-color: var(--highlighted-text);
+}
+
+.hr:hover {
+    background-color: var(--highlighted-text);
+}
+
+.textContainer {
+    display: inline-block;
+    width: 20%;
+    margin-left: 6vw;
+    position: absolute;
+}
+
+.switchLines {
+    width: 120vmin;
+    position: absolute;
+    text-align: center;
+    bottom: 5vh;
+    right: 0;
+}
+
+.mainTitle {
+    font-family: CodeProLC, serif;
+    font-size: 3em;
+    color: var(--highlighted-text);
+}
+
+.mainDescription {
+    font-family: MyriadPro, serif;
+    font-size: 1.5em;
+    color: var(--text-color-gray-light);
+}
+
+.buttonContainer {
+    width: 100%;
+    text-align: center;
+}
+
+.ourProjects {
+    font-size: 1.5em;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    opacity: 0;
+}
