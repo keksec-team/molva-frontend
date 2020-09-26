@@ -4,8 +4,7 @@ import {getStringsByLocale} from "../../../../resources/languages";
 import styles from "./Home.module.css";
 import {getLatestProjects} from "../../../../service/fakeDataService";
 import {Slide} from '@material-ui/core';
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Switch from "@material-ui/core/Switch";
+import Fade from "@material-ui/core/Fade";
 
 
 function Home(props) {
@@ -23,14 +22,21 @@ function Home(props) {
 
     return (
         <div className={styles.home}>
+            <Slide direction="right" in={true} mountOnEnter unmountOnExit>
+                <div className={styles.textContainer}>
+                    <div className={styles.text}>
+                        <h1 className={styles.mainTitle}>{strings.mainTitle}</h1>
+                        <p className={styles.mainDescription}>{strings.mainDescription}</p>
+                    </div>
+                    <div className={styles.buttonContainer}>
+                        <button className={styles.ourProjects}>{strings.ourProjects}</button>
+                    </div>
+                </div>
+            </Slide>
             <div className={styles.projectContainer}>
-                {
-                    latestProjects.map(project =>
-                        <img src={project.previewUrl}
-                             className={`${currentActive === latestProjects.indexOf(project) ?
-                                 styles.active : styles.hide} ${styles.preview}`} alt="2"/>
-                    )
-                }
+                <div className={styles.previewContainer}>
+                    <Preview activeSrc={latestProjects[currentActive].previewUrl} key={currentActive}/>
+                </div>
                 <div className={styles.switchLines}>
                     {
                         latestProjects.map(project =>
@@ -41,15 +47,17 @@ function Home(props) {
                     }
                 </div>
             </div>
-            <div className={styles.textContainer}>
-                <h1 className={styles.mainTitle}>{strings.mainTitle}</h1>
-                <p className={styles.mainDescription}>{strings.mainDescription}</p>
-                <div className={styles.buttonContainer}>
-                    <button className={styles.ourProjects}>{strings.ourProjects}</button>
-                </div>
-            </div>
         </div>
     );
+}
+
+function Preview(props) {
+    const {activeSrc} = props;
+    return (
+        <Fade in={true} timeout={400} mountOnEnter unmountOnExit>
+            <img className={styles.preview} src={activeSrc} alt=""/>
+        </Fade>
+    )
 }
 
 const mapStateToProps = state => ({

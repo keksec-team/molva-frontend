@@ -1,6 +1,7 @@
 .navbar {
     background-color: var(--background-color);
     position: fixed;
+    padding-bottom: 2vh;
     width: 100%;
     top: 0;
     height: 10vmin;
@@ -33,7 +34,7 @@
     display: none !important;
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 650px) {
     .hamburger {
         display: inline-block !important;
         font-size: 2.5rem !important;

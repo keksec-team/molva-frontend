@@ -27,7 +27,7 @@
     }
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 650px) {
     .links {
         margin: 10vh 0 0;
         padding-right: 6vmin;

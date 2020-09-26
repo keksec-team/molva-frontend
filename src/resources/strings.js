@@ -36,7 +36,7 @@ export let strings = {
             " Our team creates a comprehensive visualisation and professionally develops every stage of your project." +
             " We work in the field of producing the digital content - shooting videos, making 3D visualisations and creating websites from scratch.",
         mainTitle: "We create the impossible for you",
-        mainDescription: "We provide the quality work of the whole team",
+        mainDescription: "Quality work of the whole team",
         contactUs: "Contact us",
         ourProjects: "Our projects",
         codeTitle: "Code",
