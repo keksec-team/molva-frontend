@@ -15,7 +15,7 @@ function Home(props) {
 
     useEffect(() => {
         let interval = setInterval(() => {
-            setCurrentActive(currentActive + 1 > 2 ? 0 : currentActive + 1)
+            setCurrentActive(prevCurrent => prevCurrent + 1 > 2 ? 0 : prevCurrent + 1)
         }, 10000);
         return () => clearInterval(interval)
     }, [currentActive]);
