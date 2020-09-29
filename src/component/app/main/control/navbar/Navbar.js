@@ -15,7 +15,7 @@ function Navbar(props) {
             <img src={require('../../../../../assets/logo.svg')} className={styles.logo} alt="Logotype"/>
             <MenuIcon classes={{root: styles.hamburger}}
                       onClick={() => changeNavbarToggled(!props.isToggled, dispatch)}/>
-            {(width <= 640) ? (
+            {(width <= 650) ? (
                 <Drawer anchor={"right"}
                         open={props.isToggled}
                         onClose={() => changeNavbarToggled(!props.isToggled, dispatch)}>

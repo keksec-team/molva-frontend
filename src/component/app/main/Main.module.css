@@ -7,10 +7,10 @@
 }
 
 .screen {
-    top: 15vmin;
     position: relative;
+    top: 12vmin;
     z-index: 0;
-    min-height: calc(100% - 15vmin);
+    min-height: calc(100% - 12vmin);
 }
 
 .mainSwitchContainer {
@@ -20,5 +20,9 @@
 @media only screen and (max-width: 650px) {
     .mainSwitchContainer {
         display: none;
+    }
+    .screen {
+        top: 15vmin;
+        min-height: calc(100% - 15vmin);
     }
 }

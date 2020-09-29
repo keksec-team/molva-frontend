@@ -12,6 +12,7 @@
 button, button:focus{
   outline: none;
   color: var(--text-color-gray-light);
+  font-family: MyriadPro, serif;
   cursor: pointer;
   background: transparent;
   border: 0.1em solid var(--text-color-gray-light);
