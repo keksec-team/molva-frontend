@@ -35,7 +35,8 @@ function Home(props) {
             </Slide>
             <div className={styles.projectContainer}>
                 <div className={styles.previewContainer}>
-                    <Preview activeSrc={latestProjects[currentActive].previewUrl} key={currentActive}/>
+                    <Preview activeSrc={latestProjects[currentActive].previewUrl}
+                             activeType={latestProjects[currentActive].previewType} key={currentActive}/>
                 </div>
                 <div className={styles.switchLines}>
                     {
@@ -52,10 +53,15 @@ function Home(props) {
 }
 
 function Preview(props) {
-    const {activeSrc} = props;
+    const {activeSrc, activeType} = props;
     return (
         <Fade in={true} timeout={400} mountOnEnter unmountOnExit>
-            <img className={styles.preview} src={activeSrc} alt=""/>
+            {activeType === "image" ? <img className={styles.preview} src={activeSrc} alt=""/> :
+                <iframe className={styles.preview}
+                        src={activeSrc}
+                        allow="autoplay"
+                        frameBorder="0"
+                        allowFullScreen/>}
         </Fade>
     )
 }
