@@ -10,6 +10,7 @@
     color: var(--highlighted-text);
     font-size: 3em;
     font-family: CodeProLC, serif;
+    margin-top: 5vh;
 }
 
 .description {
@@ -26,4 +27,16 @@
 
 .noSliderContainer {
     width: 100%;
+}
+
+@media only screen and (max-width: 1000px) {
+    .slider {
+        margin-top: 0;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .title {
+        font-size: 2.2em;
+    }
 }

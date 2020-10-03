@@ -9,7 +9,7 @@ import Preview from "../preview/Preview";
 function Carousel(props) {
     let settings = {
         dots: false,
-        slidesToShow: 3,
+        slidesToShow: props.slidesToShow,
         slidesToScroll: 1,
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />

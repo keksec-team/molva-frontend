@@ -7,11 +7,13 @@ import {Slide} from "@material-ui/core";
 import Categories from "./categories/Categories";
 import Carousel from "./carousel/Carousel";
 import Preview from "./preview/Preview";
+import useWindowSize from "../control/helpers/useWindowSize";
 
 function Projects(props) {
     let strings = getStringsByLocale(props.locale);
     let projects = getProjects();
     const [currentActiveCategory, setCurrentActiveCategory] = useState(0);
+    let {width} = useWindowSize();
     return (
         <div>
             <div className={styles.container}>
@@ -24,8 +26,8 @@ function Projects(props) {
                 </Slide>
                 <div className={styles.slider}>
                     {
-                        projects[currentActiveCategory].length > 3 ?
-                            <Carousel projects={projects[currentActiveCategory]}/> :
+                        projects[currentActiveCategory].length > 3 && width >= 1000 ?
+                            <Carousel slidesToShow={3} projects={projects[currentActiveCategory]}/> :
                             <div className={styles.noSliderContainer}>
                                 {
                                     projects[currentActiveCategory].map((project, i) =>
