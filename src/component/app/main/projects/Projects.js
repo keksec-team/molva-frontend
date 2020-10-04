@@ -15,8 +15,8 @@ function Projects(props) {
     const [currentActiveCategory, setCurrentActiveCategory] = useState(0);
     let {width} = useWindowSize();
     return (
-        <div>
-            <div className={styles.container}>
+        <div className={styles.projects}>
+            <div className={styles.projectsElementsContainer}>
                 <Slide direction="right" in={true} mountOnEnter unmountOnExit>
                     <div>
                         <h1 className={styles.title}>{strings.projectsTitle}</h1>

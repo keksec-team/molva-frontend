@@ -1,7 +1,9 @@
 .projects {
+    position: relative;
 }
 
-.container {
+.projectsElementsContainer {
+    padding-top: 12vmin;
     margin-left: 8vw;
     margin-right: 8vw;
 }
@@ -38,5 +40,9 @@
 @media only screen and (max-width: 650px) {
     .title {
         font-size: 2.2em;
+    }
+
+    .projectsElementsContainer {
+        padding-top: 15vmin;
     }
 }

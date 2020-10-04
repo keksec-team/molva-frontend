@@ -25,7 +25,10 @@ export let strings = {
         appsCategory: "Приложения",
         sitesCategory: "Сайты",
         gamesCategory: "Игры",
-        filmsCategory: "Фильмы"
+        filmsCategory: "Фильмы",
+        socialVk: "VKontakte",
+        socialFacebook: "Facebook",
+        socialInstagram: "Instagram"
     },
     english: {
         home: "Home",
@@ -53,6 +56,9 @@ export let strings = {
         appsCategory: "Apps",
         sitesCategory: "Sites",
         gamesCategory: "Games",
-        filmsCategory: "Films"
+        filmsCategory: "Films",
+        socialVk: "VKontakte",
+        socialFacebook: "Facebook",
+        socialInstagram: "Instagram"
     }
 }
