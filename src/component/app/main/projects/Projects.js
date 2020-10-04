@@ -19,7 +19,7 @@ function Projects(props) {
             <div className={styles.container}>
                 <Slide direction="right" in={true} mountOnEnter unmountOnExit>
                     <div>
-                        <h1 className={styles.title}>{strings.projects}</h1>
+                        <h1 className={styles.title}>{strings.projectsTitle}</h1>
                         <Categories activeCategoryIndex={currentActiveCategory}
                                     setCurrentActiveCategory={setCurrentActiveCategory}/>
                     </div>

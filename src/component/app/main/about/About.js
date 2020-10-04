@@ -14,7 +14,7 @@ function About(props) {
         <div className={styles.about}>
             <Slide direction={"right"} in={true} mountOnEnter unmountOnExit>
                 <div className={styles.text}>
-                    <h1 className={styles.title}>{strings.about}</h1>
+                    <h1 className={styles.title}>{strings.aboutTitle}</h1>
                     <h2 className={styles.description}>{strings.aboutDescription}</h2>
                     <p className={styles.paragraph}>{strings.aboutParagraph}</p>
                 </div>

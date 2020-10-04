@@ -13,7 +13,9 @@ export let strings = {
             "У вас есть идея проекта и вы ищете команду, чтобы реализовать ее? Как раз тут и появляемся мы." +
             " Наша команда создает полноценное визуальное решение и профессианально подходит к разработке каждой стадии проекта." +
             " Мы работаем в области производства цифрового контента - снимаем видео, делаем 3D визуализации и создаем сайты с нуля.",
-        mainTitle: "Мы творим для вас",
+        mainTitle: "МЫ ТВОРИМ ДЛЯ ВАС",
+        aboutTitle: "О НАС",
+        projectsTitle: "ПРОЕКТЫ",
         mainDescription: "Профессиональная работа всей команды",
         contactUs: "Связаться с нами",
         ourProjects: "Наши проекты",
@@ -39,7 +41,9 @@ export let strings = {
             "Do you have an idea and look for a team to make it a project? That's when we come in." +
             " Our team creates a comprehensive visualisation and professionally develops every stage of your project." +
             " We work in the field of producing the digital content - shooting videos, making 3D visualisations and creating websites from scratch.",
-        mainTitle: "We create the impossible for you",
+        mainTitle: "WE CREATE THE IMPOSSIBLE FOR YOU",
+        aboutTitle: "ABOUT",
+        projectsTitle: "PROJECTS",
         mainDescription: "Quality work of the whole team",
         contactUs: "Contact us",
         ourProjects: "Our projects",
