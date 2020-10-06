@@ -5,12 +5,19 @@ import styles from "./Home.module.css";
 import {getLatestProjects} from "../../../../service/fakeDataService";
 import {Slide} from '@material-ui/core';
 import Fade from "@material-ui/core/Fade";
+import {LoadingIndicator} from "../../helper/LoadingIndicator";
 
 
 function Home(props) {
     const {dispatch} = props;
+    const [loading, setLoading] = React.useState(true);
+    const [latestProjects, setLatestProjects] = React.useState([]);
     let strings = getStringsByLocale(props.locale);
-    let latestProjects = getLatestProjects();
+    getLatestProjects().then((res) => {
+        setLatestProjects(res);
+        setLoading(false);
+    });
+
     const [currentActive, setCurrentActive] = useState(0);
 
     useEffect(() => {
@@ -35,8 +42,11 @@ function Home(props) {
             </Slide>
             <div className={styles.projectContainer}>
                 <div className={styles.previewContainer}>
-                    <Preview activeSrc={latestProjects[currentActive].previewUrl}
-                             activeType={latestProjects[currentActive].previewType} key={currentActive}/>
+                    {loading
+                        ? <LoadingIndicator className={styles.Loader}/>
+                        : <Preview activeSrc={latestProjects[currentActive].previewUrl}
+                                   activeType={latestProjects[currentActive].previewType} key={currentActive}/>
+                    }
                 </div>
                 <div className={styles.switchLines}>
                     {
