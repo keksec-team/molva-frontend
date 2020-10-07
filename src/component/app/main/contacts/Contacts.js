@@ -3,8 +3,7 @@ import {connect} from 'react-redux';
 import {getStringsByLocale} from "../../../../resources/languages";
 import styles from "./Contacts.module.css";
 import {Slide} from "@material-ui/core";
-import useWindowSize from "../control/helpers/useWindowSize";
-import FeedbackDataForm from "./form/FeedbackDataForm";
+import ReactHookForm from "./form/ReactHookForm";
 
 
 function Contacts(props) {
@@ -18,7 +17,7 @@ function Contacts(props) {
                         <p className={styles.paragraph}>{strings.contactsParagraph}</p>
                     </div>
                 </Slide>
-                <FeedbackDataForm/>
+                <ReactHookForm/>
             </div>
         </div>
     );
