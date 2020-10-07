@@ -1,5 +1,12 @@
-import {latestProjects} from "./fakeDataSource";
+import {latestProjects, projects} from "./fakeDataSource";
 
-export const getLatestProjects = () => {
+const delay = time => new Promise(res=>setTimeout(res,time));
+
+export const getLatestProjects = async() => {
+    await delay(1000);
     return latestProjects;
+}
+
+export const getProjects = () => {
+    return projects;
 }

@@ -1,0 +1,38 @@
+.categories {
+    text-align: left;
+    padding: 0;
+    color: var(--text-color-gray);
+    font-size: 2em;
+    font-family: MyriadProBold, serif;
+}
+
+.category {
+    display: inline;
+    padding-right: 3vmin;
+    padding-left: 3vmin;
+    cursor: pointer;
+}
+
+.category:hover {
+    color: var(--default-text);
+}
+
+.active {
+    color: var(--default-text);
+}
+
+.category:global(#category-0) {
+    padding-left: 0;
+}
+
+.category:global(#category-3) {
+    padding-right: 0;
+}
+
+.first {
+    padding-left: 0;
+}
+
+.last {
+    padding-right: 0;
+}

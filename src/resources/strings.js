@@ -25,7 +25,11 @@ export let strings = {
         ourProjects: "Наши проекты",
         codeTitle: "Код",
         gamesTitle: "Игры",
-        productTitle: "Продукт"
+        productTitle: "Продукт",
+        appsCategory: "Приложения",
+        sitesCategory: "Сайты",
+        gamesCategory: "Игры",
+        filmsCategory: "Фильмы"
     },
     english: {
         home: "Home",
@@ -53,6 +57,10 @@ export let strings = {
         ourProjects: "Our projects",
         codeTitle: "Code",
         gamesTitle: "Games",
-        productTitle: "Product"
+        productTitle: "Product",
+        appsCategory: "Apps",
+        sitesCategory: "Sites",
+        gamesCategory: "Games",
+        filmsCategory: "Films"
     }
 }
