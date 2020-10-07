@@ -69,7 +69,7 @@ function FeedbackDataForm(props) {
                             />
 
                             <Input
-                                className={styles.textArea}
+                                className={styles.field}
                                 label={strings.contactsFormDescription}
                                 placeholder={strings.contactsFormDescription}
                                 name="description"

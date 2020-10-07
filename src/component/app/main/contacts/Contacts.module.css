@@ -10,7 +10,7 @@
 
 .text {
     display: inline-block;
-    width: 20%;
+    width: 25vw;
     margin-left: 6vw;
 }
 
@@ -32,97 +32,17 @@
     font-family: MyriadPro, serif;
 }
 
-.pictures {
-    position: absolute;
-    margin-top: 10vh;
-    font-size: 1.5em;
-    display: inline-block;
-    text-align: center;
-    width: calc(70% - 6vw);
-}
-
-.games .code .product {
-    height: 30vmin;
-    width: 30vmin;
-}
-
-.gamesContainer {
-    display: inline-block;
-    margin-right: 5vw;
-}
-
-.games, .product {
-    height: 14vmin;
-    width: 14vmin;
-}
-
-.code {
-    height: 12vmin;
-    width: 12vmin;
-}
-
-.codeContainer {
-    display: inline-block;
-    margin-left: 5vw;
-}
-
-.gamesTitle, .codeTitle, .productTitle {
-    color: var(--text-color-gray-light);
-    font-family: MyriadPro, serif;
-    font-size: 1em;
-}
-.productContainer {
-}
-
-.contactUs, .ourProjects {
-    font-size: 1em;
-    margin: 0.8vw;
-}
-
-
 @media only screen and (max-width: 650px) {
+    .contactsFlexContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
     .text {
-        display: block;
-        margin: 0;
+        display: inline-block;
         width: auto;
-        padding: 10vw;
-
+        margin: 6vw;
     }
-
-    .title {
-        font-size: 2.2em;
-    }
-
-    .paragraph {
-        font-size: 1.15em;
-    }
-
-    .pictures {
-        position: static;
-        margin: 0;
-        display: block;
-        width: auto;
-        padding: 10vw;
-    }
-
-    .games, .product {
-        height: 22vmin;
-        width: 22vmin;
-    }
-
-    .code {
-        height: 20vmin;
-        width: 20vmin;
-    }
-
-    .codeContainer {
-        margin-left: 8vw;
-    }
-
-    .gamesContainer {
-        margin-right: 8vw;
-    }
-
     .contactUs, .ourProjects {
         display: inline-block;
         font-size: 0.7em;

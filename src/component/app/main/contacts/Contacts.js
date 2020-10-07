@@ -8,9 +8,7 @@ import FeedbackDataForm from "./form/FeedbackDataForm";
 
 
 function Contacts(props) {
-    const {dispatch} = props;
     let strings = getStringsByLocale(props.locale);
-    let {width} = useWindowSize();
     return (
         <div className={styles.contacts}>
             <div className={styles.contactsFlexContainer}>
