@@ -62,7 +62,7 @@ function FeedbackDataForm(props) {
                                 label={strings.contactsFormEmail}
                                 placeholder={strings.contactsFormEmail}
                                 name="email"
-                                type={"email"}
+                                type="email"
                                 inputProps={{
                                     maxLength: 30,
                                 }}
@@ -70,7 +70,6 @@ function FeedbackDataForm(props) {
 
                             <Input
                                 className={styles.textArea}
-                                id="outlined-multiline-static"
                                 label={strings.contactsFormDescription}
                                 placeholder={strings.contactsFormDescription}
                                 name="description"

@@ -11,16 +11,15 @@
 }
 
 .field {
-    margin: 5%;
-    border-left: 5px;
+    margin: 2vh;
 }
 
 .textArea {
-    margin: 5%;
-    border-left: 5px;
+    margin: 2vh;
 }
 
 .button {
-    margin-top: 10vw;
+    font-family: Comfortaa, serif;
+    margin-top: 10vh;
     font-size: 1.5em;
 }
