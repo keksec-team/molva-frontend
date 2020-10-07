@@ -8,7 +8,7 @@ import {BrowserRouter} from "react-router-dom";
 import {Route} from "react-router";
 import Home from "./home/Home";
 import About from "./about/About";
-
+import Contacts from "./contacts/Contacts";
 
 function Main(props) {
     const {dispatch} = props;
@@ -20,6 +20,7 @@ function Main(props) {
                 <div className={styles.screen}>
                     <Route path="/home" component={Home}/>
                     <Route path="/about" component={About}/>
+                    <Route path="/contacts" component={Contacts}/>
                 </div>
                 <div className={styles.mainSwitchContainer}>
                     <LanguageSwitch/>

@@ -1,0 +1,26 @@
+.form {
+    margin-top: 5%;
+    margin-right: 20%;
+    width: 30%;
+    text-align: center;
+}
+
+.fields {
+    display: flex;
+    flex-direction: column;
+}
+
+.field {
+    margin: 5%;
+    border-left: 5px;
+}
+
+.textArea {
+    margin: 5%;
+    border-left: 5px;
+}
+
+.button {
+    margin-top: 10vw;
+    font-size: 1.5em;
+}
