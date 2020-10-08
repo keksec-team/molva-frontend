@@ -1,1 +1,48 @@
-/*TODO write implementation*/
+.projects {
+    position: relative;
+}
+
+.projectsElementsContainer {
+    padding-top: 12vmin;
+    margin-left: 8vw;
+    margin-right: 8vw;
+}
+
+.title {
+    color: var(--highlighted-text);
+    font-size: 3em;
+    font-family: CodeProBoldLC, serif;
+    margin-top: 5vh;
+}
+
+.description {
+    color: var(--text-color-gray);
+    font-size: 2em;
+    font-family: MyriadProBold, serif;
+}
+
+.slider {
+    width: 100%;
+    height: 40vmin;
+    margin-top: 10vh;
+}
+
+.noSliderContainer {
+    width: 100%;
+}
+
+@media only screen and (max-width: 1000px) {
+    .slider {
+        margin-top: 0;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .title {
+        font-size: 2.2em;
+    }
+
+    .projectsElementsContainer {
+        padding-top: 15vmin;
+    }
+}

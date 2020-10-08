@@ -22,30 +22,32 @@ function Home(props) {
 
     return (
         <div className={styles.home}>
-            <Slide direction="right" in={true} mountOnEnter unmountOnExit>
-                <div className={styles.textContainer}>
-                    <div className={styles.text}>
-                        <h1 className={styles.mainTitle}>{strings.mainTitle}</h1>
-                        <p className={styles.mainDescription}>{strings.mainDescription}</p>
+            <div className={styles.homeElementsContainer}>
+                <Slide direction="right" in={true} mountOnEnter unmountOnExit>
+                    <div className={styles.textContainer}>
+                        <div className={styles.text}>
+                            <h1 className={styles.mainTitle}>{strings.mainTitle}</h1>
+                            <p className={styles.mainDescription}>{strings.mainDescription}</p>
+                        </div>
+                        <div className={styles.buttonContainer}>
+                            <button className={styles.ourProjects}>{strings.ourProjects}</button>
+                        </div>
                     </div>
-                    <div className={styles.buttonContainer}>
-                        <button className={styles.ourProjects}>{strings.ourProjects}</button>
+                </Slide>
+                <div className={styles.projectContainer}>
+                    <div className={styles.previewContainer}>
+                        <Preview activeSrc={latestProjects[currentActive].previewUrl}
+                                 activeType={latestProjects[currentActive].previewType} key={currentActive}/>
                     </div>
-                </div>
-            </Slide>
-            <div className={styles.projectContainer}>
-                <div className={styles.previewContainer}>
-                    <Preview activeSrc={latestProjects[currentActive].previewUrl}
-                             activeType={latestProjects[currentActive].previewType} key={currentActive}/>
-                </div>
-                <div className={styles.switchLines}>
-                    {
-                        latestProjects.map(project =>
-                            <hr className={`${currentActive === latestProjects.indexOf(project) ?
-                                styles.active : ''} ${styles.hr}`}
-                                onClick={() => setCurrentActive(latestProjects.indexOf(project))}/>
-                        )
-                    }
+                    <div className={styles.switchLines}>
+                        {
+                            latestProjects.map(project =>
+                                <hr className={`${currentActive === latestProjects.indexOf(project) ?
+                                    styles.active : ''} ${styles.hr}`}
+                                    onClick={() => setCurrentActive(latestProjects.indexOf(project))}/>
+                            )
+                        }
+                    </div>
                 </div>
             </div>
         </div>

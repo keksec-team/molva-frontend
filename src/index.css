@@ -37,6 +37,11 @@ html, body, #root, .app, .main {
   src: local('MyriadProBold'), url(./assets/fonts/MyriadProBold.otf) format("opentype");
 }
 
+@font-face {
+  font-family: "CodeProBoldLC";
+  src: local('CodeProBoldLC'), url(./assets/fonts/CodeProBoldLC.otf) format("opentype");
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
