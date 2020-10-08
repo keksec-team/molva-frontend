@@ -1,4 +1,19 @@
 .about {
+    position: absolute;
+    display: flex;
+    min-height: 100%;
+    min-width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("/aboutBackground.png");
+}
+
+.aboutElementsContainer {
+    padding-top: 12vmin;
+    padding-bottom: 12vmin;
+    min-height: 100%;
+    min-width: 100%;
 }
 
 .text {
@@ -10,7 +25,7 @@
 .title {
     color: var(--highlighted-text);
     font-size: 3em;
-    font-family: CodeProLC, serif;
+    font-family: CodeProBoldLC, serif;
 }
 
 .description {
@@ -26,7 +41,7 @@
 }
 
 .pictures {
-    position: absolute;
+    vertical-align:top;
     margin-top: 10vh;
     font-size: 1.5em;
     display: inline-block;
@@ -76,8 +91,7 @@
     margin: 0.8vw;
 }
 
-
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 1450px) {
     .text {
         display: block;
         margin: 0;
@@ -87,7 +101,7 @@
     }
 
     .title {
-        font-size: 2.2em;
+        margin-top: 0;
     }
 
     .paragraph {
@@ -133,8 +147,15 @@
     .ourProjects {
         margin-left: 2vw;
     }
+
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 650px) {
+    .title {
+        font-size: 2.2em;
+    }
 
+    .aboutElementsContainer {
+        padding-top: 15vmin;
+    }
 }
