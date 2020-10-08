@@ -21,6 +21,7 @@
 }
 
 .previewContainer {
+    float: right;
     width: 120vmin;
     height: 75vmin;
     border-left: 3px solid var(--highlighted-text);
@@ -34,7 +35,7 @@
     width: 18vmin;
     cursor: pointer;
     height: 0.5vmin;
-    margin: 6.5vh 3vw 0 3vw;
+    margin: 6vmin 3vmin 0 6vmin;
     border-radius: 0.3em;
     background-color: var(--text-color-gray-light);
 }
