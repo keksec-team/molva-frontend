@@ -11,6 +11,12 @@
     min-width: 100%;
 }
 
+.Loader {
+    position: relative;
+    padding-left: 50%;
+    margin-top: 25%;
+}
+
 .preview {
     position: relative;
     right: 0;
