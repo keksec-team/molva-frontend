@@ -1,18 +1,18 @@
 import React, {useEffect, useState} from "react";
-import {connect} from 'react-redux';
 import {getStringsByLocale} from "../../../../resources/languages";
 import styles from "./Home.module.css";
+import {connect} from 'react-redux';
 import {getLatestProjects} from "../../../../service/fakeDataService";
 import {Slide} from '@material-ui/core';
-import Fade from "@material-ui/core/Fade";
 import {LoadingIndicator} from "../../helper/LoadingIndicator";
+import Fade from "@material-ui/core/Fade";
 
 
 function Home(props) {
-    const {dispatch} = props;
     const [loading, setLoading] = React.useState(true);
     const [latestProjects, setLatestProjects] = React.useState([]);
     let strings = getStringsByLocale(props.locale);
+
     getLatestProjects().then((res) => {
         setLatestProjects(res);
         setLoading(false);
@@ -39,24 +39,25 @@ function Home(props) {
                         <div className={styles.buttonContainer}>
                             <button className={styles.ourProjects}>{strings.ourProjects}</button>
                         </div>
-                </div>
-            </Slide>
-            <div className={styles.projectContainer}>
-                <div className={styles.previewContainer}>
-                    {loading
-                        ? <LoadingIndicator className={styles.Loader}/>
-                        : <Preview activeSrc={latestProjects[currentActive].previewUrl}
-                                   activeType={latestProjects[currentActive].previewType} key={currentActive}/>
-                    }
-                </div>
-                <div className={styles.switchLines}>
-                    {
-                        latestProjects.map(project =>
-                            <hr className={`${currentActive === latestProjects.indexOf(project) ?
-                                styles.active : ''} ${styles.hr}`}
-                                onClick={() => setCurrentActive(latestProjects.indexOf(project))}/>
-                        )
-                    }
+                    </div>
+                </Slide>
+                <div className={styles.projectContainer}>
+                    <div className={styles.previewContainer}>
+                        {loading
+                            ? <LoadingIndicator className={styles.Loader}/>
+                            : <Preview activeSrc={latestProjects[currentActive].previewUrl}
+                                       activeType={latestProjects[currentActive].previewType} key={currentActive}/>
+                        }
+                    </div>
+                    <div className={styles.switchLines}>
+                        {
+                            latestProjects.map(project =>
+                                <hr className={`${currentActive === latestProjects.indexOf(project) ?
+                                    styles.active : ''} ${styles.hr}`}
+                                    onClick={() => setCurrentActive(latestProjects.indexOf(project))}/>
+                            )
+                        }
+                    </div>
                 </div>
             </div>
         </div>
