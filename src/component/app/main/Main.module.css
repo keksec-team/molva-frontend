@@ -8,9 +8,8 @@
 
 .screen {
     position: relative;
-    top: 12vmin;
     z-index: 0;
-    min-height: calc(100% - 12vmin);
+    min-height: 100%;
 }
 
 .mainSwitchContainer {
@@ -22,7 +21,6 @@
         display: none;
     }
     .screen {
-        top: 15vmin;
-        min-height: calc(100% - 15vmin);
+        min-height: 100%;
     }
 }

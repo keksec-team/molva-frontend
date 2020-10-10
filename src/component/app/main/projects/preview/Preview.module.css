@@ -1,0 +1,25 @@
+.preview {
+    width: 23vw;
+    height: 32vh;
+    border: 3px solid var(--highlighted-text);
+    border-radius: 8px;
+    margin-right: 2vw;
+    margin-left: 2vw;
+    object-fit: cover;
+    opacity: 1;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1000px) {
+    .preview {
+        width: 75vw;
+        margin-top: 2.5vh;
+        margin-bottom: 2.5vh;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .preview {
+        height: 24vh;
+    }
+}

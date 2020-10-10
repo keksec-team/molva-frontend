@@ -36,3 +36,15 @@
 .last {
     padding-right: 0;
 }
+
+@media only screen and (max-width: 800px) {
+    .categories {
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .categories {
+        font-size: 0.8em;
+    }
+}

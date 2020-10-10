@@ -19,7 +19,9 @@ export let strings = {
         contactsFormPhone: "Телефон",
         contactsFormEmail: "Почта",
         contactsFormDescription: "Описание",
-        mainTitle: "Мы творим для вас",
+        mainTitle: "МЫ ТВОРИМ ДЛЯ ВАС",
+        aboutTitle: "О НАС",
+        projectsTitle: "ПРОЕКТЫ",
         mainDescription: "Профессиональная работа всей команды",
         contactUs: "Связаться с нами",
         ourProjects: "Наши проекты",
@@ -29,7 +31,10 @@ export let strings = {
         appsCategory: "Приложения",
         sitesCategory: "Сайты",
         gamesCategory: "Игры",
-        filmsCategory: "Фильмы"
+        filmsCategory: "Фильмы",
+        socialVk: "VKontakte",
+        socialFacebook: "Facebook",
+        socialInstagram: "Instagram"
     },
     english: {
         home: "Home",
@@ -51,7 +56,9 @@ export let strings = {
         contactsFormPhone: "Phone",
         contactsFormEmail: "Email",
         contactsFormDescription: "Description",
-        mainTitle: "We create the impossible for you",
+        mainTitle: "WE CREATE THE IMPOSSIBLE FOR YOU",
+        aboutTitle: "ABOUT",
+        projectsTitle: "PROJECTS",
         mainDescription: "Quality work of the whole team",
         contactUs: "Contact us",
         ourProjects: "Our projects",
@@ -61,6 +68,9 @@ export let strings = {
         appsCategory: "Apps",
         sitesCategory: "Sites",
         gamesCategory: "Games",
-        filmsCategory: "Films"
+        filmsCategory: "Films",
+        socialVk: "VKontakte",
+        socialFacebook: "Facebook",
+        socialInstagram: "Instagram"
     }
 }
