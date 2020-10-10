@@ -19,6 +19,7 @@ function Main(props) {
                 <div className={styles.screen} id="screen">
                     <Route path="/home" component={Home}/>
                     <Route path="/about" component={About}/>
+                    <Route path="/projects" component={Projects}/>
                     <Route path="/contacts" component={Contacts}/>
                 </div>
                 <div className={styles.mainSwitchContainer}>
