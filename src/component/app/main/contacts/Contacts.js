@@ -5,7 +5,6 @@ import styles from "./Contacts.module.css";
 import {Slide} from "@material-ui/core";
 import ReactHookForm from "./form/ReactHookForm";
 
-
 function Contacts(props) {
     let strings = getStringsByLocale(props.locale);
     return (

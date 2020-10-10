@@ -33,6 +33,13 @@
 }
 
 @media only screen and (max-width: 650px) {
+    .title {
+        font-size: 2.2em;
+    }
+
+    .paragraph {
+        font-size: 1.15em;
+    }
     .contactsFlexContainer {
         display: flex;
         flex-direction: column;

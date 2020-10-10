@@ -1,30 +1,24 @@
 .form {
     margin-top: 6vh;
     margin-right: 20%;
-    width: 30vw;
+    width: 25vw;
     text-align: center;
 }
+
 
 .fields {
     display: flex;
     flex-direction: column;
 }
 
-.field {
-    color: var(--text-color-gray-light) !important;
-    font-family: Comfortaa, serif;
-    font-size: 1em;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    width: 80%;
-    border-bottom: 2px solid var(--text-color-gray-light);
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-    background: none;
-    overflow: hidden;
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active  {
+    -webkit-border-top-left-radius: 0 !important;
+    -webkit-border-top-right-radius: 0 !important;
+    -webkit-text-fill-color: var(--highlighted-text);
+    -webkit-box-shadow: 0 0 0 30px var(--background-color-dark) inset !important;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -39,7 +33,6 @@ textarea {
 }
 
 .field:focus {
-    width: 100%;
     color: var(--text-color-gray-light) !important;
     outline: none !important;
     border-bottom:2px solid var(--highlighted-text);
@@ -51,23 +44,22 @@ textarea {
 }
 
 .button {
-    font-family: Comfortaa, serif;
     margin-top: 10vh;
     font-size: 1.5em;
-    margin-right: 20%;
 }
 
 @media only screen and (max-width: 650px) {
     .form {
+        font-size: 1.5em;
         width: auto;
-        margin-left: 6vw;
-        margin-right: 6vw;
+        margin-left: 10vw;
+        margin-right: 10vw;
         margin-bottom: 6vh;
     }
     .button {
-        font-family: Comfortaa, serif;
-        margin-top: 4vh;
-        font-size: 1.5em;
+        display: inline-block;
+        font-size: 0.7em;
+        margin: 5vh 0 0;
     }
 }
 

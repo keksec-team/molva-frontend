@@ -18,7 +18,8 @@ function Navbar(props) {
             {(width <= 650) ? (
                 <Drawer anchor={"right"}
                         open={props.isToggled}
-                        onClose={() => changeNavbarToggled(!props.isToggled, dispatch)}>
+                        onClose={() => changeNavbarToggled(!props.isToggled, dispatch)}
+                        onClick={() => changeNavbarToggled(!props.isToggled, dispatch)}>
                     <Menu/>
                 </Drawer>
             ) : <Menu/>}
