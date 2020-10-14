@@ -53,6 +53,7 @@ function ReactHookForm(props) {
                             message: strings.validationNameLength
                         },
                     })}
+                    fullWidth
                     autoComplete='name'
                     error={!!errors.name}
                 />
