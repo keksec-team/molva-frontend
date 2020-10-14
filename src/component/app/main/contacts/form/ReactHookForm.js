@@ -1,119 +1,123 @@
 import {getStringsByLocale} from "../../../../../resources/languages";
 import {connect} from "react-redux";
 import styles from "./ReactHookForm.module.css";
-import React from "react";
+import React, {useState} from "react";
 import {useForm} from "react-hook-form";
-import withStyles from "@material-ui/core/styles/withStyles";
-import TextField from "@material-ui/core/TextField";
-import makeStyles from "@material-ui/core/styles/makeStyles";
+import {CustomInputField, useStyles} from "./input/CustomInput";
 
-
-const CssTextField = withStyles({
-    root: {
-        '& label.Mui-focused': {
-            color: 'var(--text-color-gray)',
-        },
-        '& label.MuiFormLabel-root': {
-            color: 'var(--text-color-gray)',
-            fontFamily: 'Comfortaa'
-        },
-        '& .MuiInputBase-root': {
-            backgroundColor: 'var(--background-color-dark)',
-            color: "var(--text-color-gray)",
-            fontFamily: 'Comfortaa',
-        },
-        '& .MuiInputBase-root:hover': {
-            backgroundColor: 'rgba(0,0,0,0.2)',
-        },
-        '& .MuiFilledInput-underline:before': {
-            borderColor: 'var(--text-color-gray-light)',
-        },
-        '& .MuiFilledInput-underline:after': {
-            borderColor: 'var(--highlighted-text)',
-        },
-        '& .MuiFilledInput-root': {
-            '& fieldset': {
-                borderColor: 'var(--text-color-gray-light)',
-            },
-            '&:hover fieldset': {
-                borderColor: 'var(--highlighted-text)',
-            },
-            '&.Mui-focused fieldset': {
-                borderColor: 'var(--highlighted-text)',
-            },
-        },
-    },
-})(TextField);
 
 function ReactHookForm(props) {
-    let strings = getStringsByLocale(props.locale);
-    const {handleSubmit, register, errors} = useForm();
-    const useStyles = makeStyles((theme) => ({
-        root: {
-            display: "flex",
-            flexWrap: "wrap"
-        },
-        margin: {
-            margin: theme.spacing(1)
-        }
-    }));
+
     const classes = useStyles();
-    const names = classes.margin + styles.description;
-    const onSubmit = values => console.log(values);
+
+    let strings = getStringsByLocale(props.locale);
+    const [name, setName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [email, setEmail] = useState("");
+    const [description, setDescription] = useState("");
+    const {handleSubmit, register, errors} = useForm({
+        mode: 'onChange',
+        reValidateMode: 'onChange',
+    });
+
+    const onCLick = () => {
+        setName(document.getElementById("input-name").value)
+        setPhone(document.getElementById("input-phone").value)
+        setEmail(document.getElementById("input-email").value)
+        setDescription(document.getElementById("input-description").value)
+    }
+    const onSubmit = values => {
+        console.log(values);
+    }
+
     return (
         <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
             <div className={styles.fields}>
-                <CssTextField
-                    variant="filled"
-                    id="filled-basic"
-                    label={strings.contactsFormName}
-                    maxLength={30}
-                    className={classes.margin}
+                <CustomInputField
+                    defaultValue={name}
                     name="name"
-                    ref={register()}
+                    variant="filled"
+                    id="input-name"
+                    label={strings.contactsFormName + '*'}
+                    type="text"
+                    helperText={errors.name?.message}
+                    className={classes.margin}
+                    inputProps={{
+                        maxLength: 30,
+                    }}
+                    inputRef={register({
+                        maxLength: 30,
+                        required: strings.validationNameRequired,
+                        minLength: {
+                            value: 2,
+                            message: strings.validationNameLength
+                        },
+                    })}
+                    autoComplete='name'
+                    error={!!errors.name}
                 />
 
-                <CssTextField
-                    variant="filled"
-                    id="filled-basic"
-                    label={strings.contactsFormPhone}
-                    maxLength={30}
-                    className={classes.margin}
+                <CustomInputField
                     name="phone"
-                    pattern= "[0-9]"
-                    ref={register()}
+                    variant="filled"
+                    id="input-phone"
+                    label={strings.contactsFormPhone}
+                    helperText={errors.phone?.message}
+                    maxLength={2}
+                    className={classes.margin}
+                    inputProps={{
+                        maxLength: 30,
+                    }}
+                    autoComplete='tel'
+                    error={!!errors.phone}
+                    fullWidth
+                    inputRef={register()}
+                    defaultValue={phone}
                 />
 
-                <CssTextField
-                    variant="filled"
-                    id="filled-basic"
-                    label={strings.contactsFormEmail}
-                    maxLength={50}
-                    className={classes.margin}
+                <CustomInputField
                     name="email"
-                    ref={register({
-                        required: "Required",
+                    variant="filled"
+                    id="input-email"
+                    label={strings.contactsFormEmail + '*'}
+                    helperText={errors.email?.message}
+                    className={classes.margin}
+                    inputProps={{
+                        maxLength: 50,
+                    }}
+                    inputRef={register({
+                        required: strings.validationEmailRequired,
                         pattern: {
                             value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                            message: "invalid email address"
+                            message: strings.validationEmailWrongPattern
                         }
                     })}
+                    autoComplete='email'
+                    error={!!errors.email}
+                    fullWidth
+                    defaultValue={email}
                 />
-                {errors.email && errors.email.message}
 
-                <CssTextField
+                <CustomInputField
+                    name="description"
                     multiline={true}
                     variant="filled"
-                    id="custom-css-outlined-input"
+                    id="input-description"
                     label={strings.contactsFormDescription}
+                    helperText={errors.description?.message}
                     className={classes.margin}
                     style={{'margin-top': '6vh'}}
                     rowsMax={8}
-                    name="description"
-                    ref={register()}
+                    inputProps={{
+                        maxLength: 3000,
+                    }}
+                    inputRef={register()}
+                    error={!!errors.description}
+                    fullWidth
+                    defaultValue={description}
                 />
             </div>
-            <button type='submit' className={styles.button}>{strings.contactUs}</button>
+            <button type='submit' onClick={() => onCLick()} className={styles.button}>{strings.contactUs}</button>
         </form>
     );
 }

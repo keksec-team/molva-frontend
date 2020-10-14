@@ -5,6 +5,7 @@ import styles from "./Contacts.module.css";
 import {Slide} from "@material-ui/core";
 import ReactHookForm from "./form/ReactHookForm";
 
+
 function Contacts(props) {
     let strings = getStringsByLocale(props.locale);
     return (
@@ -12,7 +13,7 @@ function Contacts(props) {
             <div className={styles.contactsFlexContainer}>
                 <Slide direction={"right"} in={true} mountOnEnter unmountOnExit>
                     <div className={styles.text}>
-                        <h1 className={styles.title}>{strings.contacts}</h1>
+                        <h1 className={styles.title}>{strings.contactsTitle}</h1>
                         <p className={styles.paragraph}>{strings.contactsParagraph}</p>
                     </div>
                 </Slide>
