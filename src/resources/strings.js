@@ -13,6 +13,13 @@ export let strings = {
             "У вас есть идея проекта и вы ищете команду, чтобы реализовать ее? Как раз тут и появляемся мы." +
             " Наша команда создает полноценное визуальное решение и профессианально подходит к разработке каждой стадии проекта." +
             " Мы работаем в области производства цифрового контента - снимаем видео, делаем 3D визуализации и создаем сайты с нуля.",
+        contactsTitle: "КОНТАКТЫ",
+        contactsParagraph: "Если у вас есть креативная идея, которую вы хотите реализовать с нашей помощью - то просто оставьте свою" +
+            " контактную информацию и описание проекта в форме обратной связи",
+        contactsFormName: "Имя",
+        contactsFormPhone: "Телефон",
+        contactsFormEmail: "Почта",
+        contactsFormDescription: "Описание",
         mainTitle: "МЫ ТВОРИМ ДЛЯ ВАС",
         aboutTitle: "О НАС",
         projectsTitle: "ПРОЕКТЫ",
@@ -28,7 +35,11 @@ export let strings = {
         filmsCategory: "Фильмы",
         socialVk: "VKontakte",
         socialFacebook: "Facebook",
-        socialInstagram: "Instagram"
+        socialInstagram: "Instagram",
+        validationEmailWrongPattern:"Некорректный адрес почты",
+        validationNameRequired: "Поле 'Имя' является обязательным",
+        validationEmailRequired: "Поле 'Почта' является обязательным",
+        validationNameLength: "Имя не может состоять из одного символа"
     },
     english: {
         home: "Home",
@@ -44,6 +55,13 @@ export let strings = {
             "Do you have an idea and look for a team to make it a project? That's when we come in." +
             " Our team creates a comprehensive visualisation and professionally develops every stage of your project." +
             " We work in the field of producing the digital content - shooting videos, making 3D visualisations and creating websites from scratch.",
+        contactsTitle: "CONTACTS",
+        contactsParagraph: "If you have a creative idea that you want to realize with our help - " +
+            "then you can leave tour data and project description in the feedback form",
+        contactsFormName: "Name",
+        contactsFormPhone: "Phone",
+        contactsFormEmail: "Email",
+        contactsFormDescription: "Description",
         mainTitle: "WE CREATE THE IMPOSSIBLE FOR YOU",
         aboutTitle: "ABOUT",
         projectsTitle: "PROJECTS",
@@ -59,6 +77,10 @@ export let strings = {
         filmsCategory: "Films",
         socialVk: "VKontakte",
         socialFacebook: "Facebook",
-        socialInstagram: "Instagram"
+        socialInstagram: "Instagram",
+        validationEmailWrongPattern:"Invalid email address",
+        validationNameRequired: "The 'Name' is required",
+        validationEmailRequired: "The 'Email' is required",
+        validationNameLength: "The name cannot be one character"
     }
 }
