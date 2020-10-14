@@ -4,11 +4,11 @@ import {getStringsByLocale} from "../../../../resources/languages";
 import styles from "./Home.module.css";
 import {getLatestProjects} from "../../../../service/fakeDataService";
 import {Slide} from '@material-ui/core';
-import Fade from "@material-ui/core/Fade";
+import Preview from "../projects/preview/Preview";
+import {Link} from "react-router-dom";
 
 
 function Home(props) {
-    const {dispatch} = props;
     let strings = getStringsByLocale(props.locale);
     let latestProjects = getLatestProjects();
     const [currentActive, setCurrentActive] = useState(0);
@@ -30,15 +30,20 @@ function Home(props) {
                             <p className={styles.mainDescription}>{strings.mainDescription}</p>
                         </div>
                         <div className={styles.buttonContainer}>
-                            <button className={styles.ourProjects}>{strings.ourProjects}</button>
+                            <Link to="/projects">
+                                <button className={styles.ourProjects}>{strings.ourProjects}</button>
+                            </Link>
                         </div>
                     </div>
                 </Slide>
                 <div className={styles.projectContainer}>
-                    <div className={styles.previewContainer}>
-                        <Preview activeSrc={latestProjects[currentActive].previewUrl}
-                                 activeType={latestProjects[currentActive].previewType} key={currentActive}/>
-                    </div>
+                    <Preview activeSrc={latestProjects[currentActive].previewUrl}
+                             activeType={latestProjects[currentActive].previewType}
+                             activeId={latestProjects[currentActive].id}
+                             isLink={true}
+                             size={2}
+                             key={currentActive}
+                    />
                     <div className={styles.switchLines}>
                         {
                             latestProjects.map(project =>
@@ -52,20 +57,6 @@ function Home(props) {
             </div>
         </div>
     );
-}
-
-function Preview(props) {
-    const {activeSrc, activeType} = props;
-    return (
-        <Fade in={true} timeout={400} mountOnEnter unmountOnExit>
-            {activeType === "image" ? <img className={styles.preview} src={activeSrc} alt=""/> :
-                <iframe className={styles.preview}
-                        src={activeSrc}
-                        allow="autoplay"
-                        frameBorder="0"
-                        allowFullScreen/>}
-        </Fade>
-    )
 }
 
 const mapStateToProps = state => ({

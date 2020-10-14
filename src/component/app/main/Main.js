@@ -9,6 +9,7 @@ import Home from "./home/Home";
 import About from "./about/About";
 import Projects from "./projects/Projects";
 import Social from "./control/social/Social";
+import Project from "./project/Project";
 
 
 function Main(props) {
@@ -20,6 +21,7 @@ function Main(props) {
                     <Route path="/home" component={Home}/>
                     <Route path="/projects" component={Projects}/>
                     <Route path="/about" component={About}/>
+                    <Route path="/project" component={Project}/>
                 </div>
                 <div className={styles.mainSwitchContainer}>
                     <LanguageSwitch/>

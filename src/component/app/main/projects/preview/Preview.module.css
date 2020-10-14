@@ -1,4 +1,4 @@
-.preview {
+.smallPreview {
     width: 23vw;
     height: 32vh;
     border: 3px solid var(--highlighted-text);
@@ -10,8 +10,76 @@
     cursor: pointer;
 }
 
+.normalPreview {
+    display: inline-block;
+    margin-right: 1.2vw;
+    width: 76vmin;
+    height: 44vmin;
+    border: 3px solid var(--highlighted-text);
+    border-radius: 8px;
+    margin-top: 4vh;
+    margin-left: 2vw;
+    object-fit: cover;
+    opacity: 1;
+}
+
+.bigPreview {
+    float: right;
+    width: 120vmin;
+    height: 75vmin;
+    border-left: 3px solid var(--highlighted-text);
+    border-top: 3px solid var(--highlighted-text);
+    border-bottom: 3px solid var(--highlighted-text);
+    border-radius: 8px 0 0 8px;
+    object-fit: cover;
+    opacity: 1;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1800px) {
+    .bigPreview {
+        width: 100vmin;
+        height: 65vmin;
+    }
+}
+
+@media only screen and (max-width: 1700px) {
+    .bigPreview {
+        width: 85vmin;
+        height: 55vmin;
+    }
+}
+
+@media only screen and (max-width: 1450px) {
+    .bigPreview {
+        width: 100vmax;
+        height: 65vmax;
+        border-left: none;
+        border-radius: 0;
+    }
+
+    .normalPreview {
+        width: 57vmin;
+        height: 33vmin;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .normalPreview {
+        width: calc(100% - 6px);
+        height: calc((100% - 6px) / 1.7);
+        margin: 4vh 0 0;
+        float: none;
+    }
+}
+
 @media only screen and (max-width: 1000px) {
-    .preview {
+    .bigPreview {
+        width: 100vmin;
+        height: 65vmin;
+    }
+
+    .smallPreview {
         width: 75vw;
         margin-top: 2.5vh;
         margin-bottom: 2.5vh;
@@ -19,7 +87,12 @@
 }
 
 @media only screen and (max-width: 650px) {
-    .preview {
+    .smallPreview {
         height: 24vh;
+    }
+
+    .bigPreview {
+        width: 100vmin;
+        height: 100vmin;
     }
 }

@@ -1,0 +1,112 @@
+.project {
+    position: absolute;
+    display: flex;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.projectElementsContainer {
+    padding-top: 12vmin;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.projectHeader {
+    padding: 0 5vw;
+}
+
+.text {
+    display: inline-block;
+    margin-top: 5vh;
+    max-width: 20vmax;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    min-width: 100%;
+}
+
+.projectTitle {
+    font-family: CodeProBoldLC, serif;
+    font-size: 3em;
+    width: 100%;
+    color: var(--highlighted-text);
+    margin-top: 5vh;
+    max-width: 20vmax;
+}
+
+.projectFile {
+    border: 3px solid var(--highlighted-text);
+    border-radius: 8px;
+}
+
+.projectFiles {
+    padding: 2vh 5vw 5vw;
+}
+
+.gridList {
+    width: 100%;
+}
+
+.tile {
+    border: 3px solid var(--highlighted-text);
+    border-radius: 8px;
+}
+
+.projectDescription {
+    font-family: MyriadPro, serif;
+    display: inline-block;
+    font-size: 1.5em;
+    color: var(--text-color-gray-light);
+    margin-top: 4vh;
+    max-width: 40vmax;
+    min-width: 30vmax;
+}
+
+@media only screen and (max-width: 1100px) {
+    .container {
+        display: block;
+    }
+
+    .projectDescription {
+        display: block;
+        max-width: 100%;
+        min-width: 100%;
+        margin: 0;
+    }
+
+    .container {
+        margin-top: 4vh;
+    }
+
+    .projectTitle {
+        margin: 0;
+    }
+
+    .projectHeader {
+        padding: 10vw;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .projectElementsContainer {
+        padding-top: 15vmin;
+    }
+
+    .text {
+        display: block;
+        max-width: 100%;
+        margin: 0;
+        padding: 10vw;
+    }
+
+    .projectTitle {
+        font-size: 2.2em;
+    }
+
+    .projectDescription {
+        font-size: 1.15em;
+        margin-top: 1vh;
+    }
+}
