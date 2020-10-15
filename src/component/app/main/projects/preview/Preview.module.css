@@ -102,6 +102,11 @@
         height: 24vh;
     }
 
+    .normalPreview {
+        width: 75vw;
+        height: 24vh;
+    }
+
     .bigPreview {
         width: 100vmin;
         height: 100vmin;

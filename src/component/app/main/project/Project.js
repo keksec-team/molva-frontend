@@ -11,6 +11,7 @@ import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
 import {getGrid} from "./helper/helper";
 import {LoadingIndicator} from "../../helper/LoadingIndicator";
+import useWindowSize from "../control/helpers/useWindowSize";
 
 
 function Project(props) {
@@ -39,6 +40,7 @@ function Project(props) {
 
     }, [])
     let location = useLocation();
+    let {width} = useWindowSize();
     let grid;
     if (project) {
         if (project.files) {
@@ -71,16 +73,33 @@ function Project(props) {
                         <Fade in={true} timeout={360} mountOnEnter unmountOnExit>
                             <div className={styles.projectFiles}>
                                 {
-                                    project.files != null ?
-                                        <GridList cellHeight={600} className={styles.gridList} cols={3}
-                                                  spacing={25}>
-                                            {project.files.map((projectFile, i) => (
-                                                <GridListTile classes={{tile: styles.tile}} key={projectFile.url}
-                                                              cols={grid[i]}>
-                                                    <img src={projectFile.url} alt=""/>
-                                                </GridListTile>
-                                            ))}
-                                        </GridList> : ""
+                                    width >= 1000 ?
+                                        project.files != null ?
+                                            <GridList cellHeight={width > 1200 ? 600 : 400} className={styles.gridList}
+                                                      cols={3}
+                                                      spacing={25}>
+                                                {project.files.map((projectFile, i) => (
+                                                    <GridListTile classes={{tile: styles.tile}} key={projectFile.url}
+                                                                  cols={grid[i]}>
+                                                        <img src={projectFile.url} alt=""/>
+                                                    </GridListTile>
+                                                ))}
+                                            </GridList> : ""
+                                        :
+                                        <div className={styles.filesColumn}>
+                                            {
+                                                project.files != null ?
+                                                    project.files.map((projectFile, i) =>
+                                                        <Preview activeSrc={projectFile.url}
+                                                                 activeType={projectFile.type}
+                                                                 activeId={projectFile.id}
+                                                                 isLink={false}
+                                                                 isLoaded={isLoaded}
+                                                                 size={0}
+                                                                 key={i}/>
+                                                    ) : ""
+                                            }
+                                        </div>
                                 }
                             </div>
                         </Fade>
