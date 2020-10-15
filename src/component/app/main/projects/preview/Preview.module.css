@@ -1,6 +1,8 @@
 .smallPreview {
+    text-align: center;
     width: 23vw;
     height: 32vh;
+    display: inline-block;
     border: 3px solid var(--highlighted-text);
     border-radius: 8px;
     margin-right: 2vw;
@@ -12,6 +14,7 @@
 
 .normalPreview {
     display: inline-block;
+    text-align: center;
     margin-right: 1.2vw;
     width: 76vmin;
     height: 44vmin;
@@ -25,6 +28,7 @@
 
 .bigPreview {
     float: right;
+    text-align: center;
     width: 120vmin;
     height: 75vmin;
     border-left: 3px solid var(--highlighted-text);
@@ -34,6 +38,13 @@
     object-fit: cover;
     opacity: 1;
     cursor: pointer;
+}
+
+.previewPos {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 @media only screen and (max-width: 1800px) {

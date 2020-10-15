@@ -7,10 +7,10 @@ import {BrowserRouter} from "react-router-dom";
 import {Route} from "react-router";
 import Home from "./home/Home";
 import About from "./about/About";
+import Contacts from "./contacts/Contacts";
 import Projects from "./projects/Projects";
 import Social from "./control/social/Social";
 import Project from "./project/Project";
-
 
 function Main(props) {
     return (
@@ -19,14 +19,15 @@ function Main(props) {
                 <Navbar/>
                 <div className={styles.screen} id="screen">
                     <Route path="/home" component={Home}/>
-                    <Route path="/projects" component={Projects}/>
                     <Route path="/about" component={About}/>
                     <Route path="/project" component={Project}/>
+                    <Route path="/projects" component={Projects}/>
+                    <Route path="/contacts" component={Contacts}/>
                 </div>
                 <div className={styles.mainSwitchContainer}>
                     <LanguageSwitch/>
                 </div>
-                <Social />
+                <Social/>
             </BrowserRouter>
         </div>
     );

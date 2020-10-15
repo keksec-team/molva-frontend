@@ -1,16 +1,25 @@
 import React, {useEffect, useState} from "react";
-import {connect} from 'react-redux';
 import {getStringsByLocale} from "../../../../resources/languages";
 import styles from "./Home.module.css";
+import {connect} from 'react-redux';
 import {getLatestProjects} from "../../../../service/fakeDataService";
 import {Slide} from '@material-ui/core';
 import Preview from "../projects/preview/Preview";
 import {Link} from "react-router-dom";
+import {LoadingIndicator} from "../../helper/LoadingIndicator";
+import Fade from "@material-ui/core/Fade";
 
 
 function Home(props) {
+    const [isLoaded, setLoaded] = useState(false);
+    const [latestProjects, setLatestProjects] = useState([]);
     let strings = getStringsByLocale(props.locale);
-    let latestProjects = getLatestProjects();
+
+    getLatestProjects().then((res) => {
+        setLatestProjects(res);
+        setLoaded(true);
+    });
+
     const [currentActive, setCurrentActive] = useState(0);
 
     useEffect(() => {
@@ -37,10 +46,11 @@ function Home(props) {
                     </div>
                 </Slide>
                 <div className={styles.projectContainer}>
-                    <Preview activeSrc={latestProjects[currentActive].previewUrl}
-                             activeType={latestProjects[currentActive].previewType}
-                             activeId={latestProjects[currentActive].id}
+                    <Preview activeSrc={latestProjects[currentActive] ? latestProjects[currentActive].previewUrl : ""}
+                             activeType={latestProjects[currentActive] ? latestProjects[currentActive].previewType : ""}
+                             activeId={latestProjects[currentActive] ? latestProjects[currentActive].id : ""}
                              isLink={true}
+                             isLoaded={isLoaded}
                              size={2}
                              key={currentActive}
                     />

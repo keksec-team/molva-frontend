@@ -10,6 +10,7 @@ import Fade from "@material-ui/core/Fade";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
 import {getGrid} from "./helper/helper";
+import {LoadingIndicator} from "../../helper/LoadingIndicator";
 
 
 function Project(props) {
@@ -24,9 +25,11 @@ function Project(props) {
         //     .then(res => res.json())
         //     .then(
         //         (result) => {
-        setProject(getProjectById(location.state.activeId))
-        setIsLoaded(true);
-        setError(false);
+        getProjectById(location.state.activeId).then(project => {
+            setProject(project)
+            setIsLoaded(true);
+            setError(false);
+        })
         //         },
         //         (error) => {
         //             setIsLoaded(true);
@@ -44,46 +47,46 @@ function Project(props) {
     }
     return (
         <div className={styles.project}>
-            {
-                isLoaded && project ?
-                    error ? <div>error</div> : (
-                        <div className={styles.projectElementsContainer}>
-                            <div className={styles.projectHeader}>
-                                <div>
-                                    <Slide direction="right" in={true} mountOnEnter unmountOnExit>
-                                        <h1 className={styles.projectTitle}>{project.name.toUpperCase()}</h1>
-                                    </Slide>
-                                    <div className={styles.container}>
-                                        <Fade in={true} timeout={360} mountOnEnter unmountOnExit>
-                                            <p className={styles.projectDescription}>{project.description}</p>
-                                        </Fade>
-                                        <Preview activeSrc={project.previewUrl}
-                                                 activeType={project.previewType}
-                                                 activeId={project.id}
-                                                 isLink={false}
-                                                 size={1}/>
-                                    </div>
+            <div className={styles.projectElementsContainer}>
+                {!isLoaded ? <div className={styles.loaderContainer}><LoadingIndicator/></div> :
+                    <div>
+                        <div className={styles.projectHeader}>
+                            <div>
+                                <Slide direction="right" in={true} mountOnEnter unmountOnExit>
+                                    <h1 className={styles.projectTitle}>{project.name.toUpperCase()}</h1>
+                                </Slide>
+                                <div className={styles.container}>
+                                    <Fade in={true} timeout={360} mountOnEnter unmountOnExit>
+                                        <p className={styles.projectDescription}>{project.description}</p>
+                                    </Fade>
+                                    <Preview activeSrc={project.previewUrl}
+                                             activeType={project.previewType}
+                                             activeId={project.id}
+                                             isLink={false}
+                                             isLoaded={isLoaded}
+                                             size={1}/>
                                 </div>
                             </div>
-                            <Fade in={true} timeout={360} mountOnEnter unmountOnExit>
-                                <div className={styles.projectFiles}>
-                                    {
-                                        project.files != null ?
-                                            <GridList cellHeight={600} className={styles.gridList} cols={3}
-                                                      spacing={25}>
-                                                {project.files.map((projectFile, i) => (
-                                                    <GridListTile classes={{tile: styles.tile}} key={projectFile.url}
-                                                                  cols={grid[i]}>
-                                                        <img src={projectFile.url} alt=""/>
-                                                    </GridListTile>
-                                                ))}
-                                            </GridList> : ""
-                                    }
-                                </div>
-                            </Fade>
                         </div>
-                    ) : (<div>loading</div>)
-            }
+                        <Fade in={true} timeout={360} mountOnEnter unmountOnExit>
+                            <div className={styles.projectFiles}>
+                                {
+                                    project.files != null ?
+                                        <GridList cellHeight={600} className={styles.gridList} cols={3}
+                                                  spacing={25}>
+                                            {project.files.map((projectFile, i) => (
+                                                <GridListTile classes={{tile: styles.tile}} key={projectFile.url}
+                                                              cols={grid[i]}>
+                                                    <img src={projectFile.url} alt=""/>
+                                                </GridListTile>
+                                            ))}
+                                        </GridList> : ""
+                                }
+                            </div>
+                        </Fade>
+                    </div>
+                }
+            </div>
         </div>
     )
 }

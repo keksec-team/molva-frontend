@@ -9,8 +9,8 @@ import Carousel from "./carousel/Carousel";
 import Preview from "./preview/Preview";
 import useWindowSize from "../control/helpers/useWindowSize";
 import Fade from "@material-ui/core/Fade";
+import {LoadingIndicator} from "../../helper/LoadingIndicator";
 
-//TODO Write error and set loader
 function Projects(props) {
     let strings = getStringsByLocale(props.locale);
     const [currentActiveCategory, setCurrentActiveCategory] = useState("apps");
@@ -23,9 +23,13 @@ function Projects(props) {
         //     .then(res => res.json())
         //     .then(
         //         (result) => {
-        setIsLoaded(true);
-        setProjectsByActiveCategory(getProjectsByCategory(currentActiveCategory))
-        setError(false);
+        setProjectsByActiveCategory(null);
+        setIsLoaded(false);
+        getProjectsByCategory(currentActiveCategory).then((projects) => {
+            setProjectsByActiveCategory(projects)
+            setIsLoaded(true);
+            setError(false);
+        })
         //         },
         //         (error) => {
         //             setIsLoaded(true);
@@ -33,6 +37,31 @@ function Projects(props) {
         //         }
         //     )
     }, [currentActiveCategory])
+    const getSlider = () => {
+        if (projectsByActiveCategory) {
+            if (projectsByActiveCategory.length > 3 && width >= 1000) {
+                return <Carousel slidesToShow={3} projects={projectsByActiveCategory} isLoaded={isLoaded}/>;
+            } else {
+                return <div className={styles.noSliderContainer}>
+                    {
+                        projectsByActiveCategory.map((project, i) =>
+                            <Preview activeSrc={project.previewUrl}
+                                     activeType={project.previewType}
+                                     activeId={project.id}
+                                     isLink={true}
+                                     isLoaded={isLoaded}
+                                     size={0}
+                                     key={i}/>
+                        )
+                    }
+                </div>
+            }
+        } else {
+            return <div className={styles.loaderContainer}>
+                <LoadingIndicator previewSize={0}/>
+            </div>
+        }
+    }
     return (
         <div className={styles.projects}>
             <div className={styles.projectsElementsContainer}>
@@ -44,28 +73,11 @@ function Projects(props) {
                     </div>
                 </Slide>
                 {
-                    isLoaded ?
-                        error ? (<div>error</div>) : (
-                            <Fade in={true} timeout={360} mountOnEnter unmountOnExit>
-                                <div className={styles.slider}>
-                                    {
-                                        projectsByActiveCategory.length > 3 && width >= 1000 ?
-                                            <Carousel slidesToShow={3} projects={projectsByActiveCategory}/> :
-                                            <div className={styles.noSliderContainer}>
-                                                {
-                                                    projectsByActiveCategory.map((project, i) =>
-                                                        <Preview activeSrc={project.previewUrl}
-                                                                 activeType={project.previewType}
-                                                                 activeId={project.id}
-                                                                 isLink={true}
-                                                                 size={0}
-                                                                 key={i}/>
-                                                    )
-                                                }
-                                            </div>
-                                    }
-                                </div>
-                            </Fade>) : (<div>loading</div>)
+                    <Fade in={true} timeout={360} mountOnEnter unmountOnExit>
+                        <div className={styles.slider}>
+                            {getSlider()}
+                        </div>
+                    </Fade>
                 }
             </div>
         </div>

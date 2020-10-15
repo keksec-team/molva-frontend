@@ -23,12 +23,17 @@
 
 .slider {
     width: 100%;
-    height: 40vmin;
     margin-top: 10vh;
 }
 
 .noSliderContainer {
     width: 100%;
+}
+
+.loaderContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 @media only screen and (max-width: 1000px) {
