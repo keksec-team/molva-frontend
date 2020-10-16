@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {getStringsByLocale} from "../../../../resources/languages";
 import {useLocation} from "react-router";
 import styles from "./Project.module.css";
-import {getProjectById, getProjectsByCategory} from "../../../../service/fakeDataService";
+import {getProjectById} from "../../../../service/fakeDataService";
 import {Slide} from "@material-ui/core";
 import Preview from "../projects/preview/Preview";
 import Fade from "@material-ui/core/Fade";
@@ -12,6 +12,7 @@ import GridListTile from "@material-ui/core/GridListTile";
 import {getGrid} from "./helper/helper";
 import {LoadingIndicator} from "../../helper/LoadingIndicator";
 import useWindowSize from "../control/helpers/useWindowSize";
+import {Video} from "../../helper/Video";
 
 
 function Project(props) {
@@ -44,7 +45,7 @@ function Project(props) {
     let grid;
     if (project) {
         if (project.files) {
-            grid = getGrid(project.files.length);
+            grid = getGrid(project.files);
         }
     }
     return (
@@ -81,7 +82,15 @@ function Project(props) {
                                                 {project.files.map((projectFile, i) => (
                                                     <GridListTile classes={{tile: styles.tile}} key={projectFile.url}
                                                                   cols={grid[i]}>
-                                                        <img src={projectFile.url} alt=""/>
+                                                        {
+                                                            projectFile.type === "image" ?
+                                                                <img src={projectFile.url} alt=""/> :
+                                                                <Video src={projectFile.url}
+                                                                       id={i}
+                                                                       controls={false}
+                                                                       type="video/mp4"
+                                                                       autoplay={true}/>
+                                                        }
                                                     </GridListTile>
                                                 ))}
                                             </GridList> : ""

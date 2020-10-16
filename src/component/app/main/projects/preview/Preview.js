@@ -3,6 +3,7 @@ import styles from "./Preview.module.css";
 import {Link} from 'react-router-dom';
 import React from "react";
 import {LoadingIndicator} from "../../../helper/LoadingIndicator";
+import {Video} from "../../../helper/Video";
 
 function Preview(props) {
     //size parameter could be 0, 1, 2
@@ -15,31 +16,23 @@ function Preview(props) {
     const previewStyle = getPreviewStyle();
     const previewElement = activeType === "image" ?
         <img src={activeSrc} className={styles.previewPos} alt=""/> :
-        <iframe
-            src={activeSrc}
-            className={styles.previewPos}
-            allow="autoplay"
-            frameBorder="0"
-            allowFullScreen/>
+        <Video src={activeSrc} id={activeId} controls={false} autoplay={true} type="video/mp4"/>
+    const previewContainer = <Fade in={true} timeout={400} mountOnEnter unmountOnExit>
+        <div className={previewStyle}>
+            {
+                projectTitle ? <div className={styles.projectTitle}>{projectTitle[0].toUpperCase()
+                    + projectTitle.slice(1)}</div>
+                    : ""
+            }
+            {previewElement}
+        </div>
+    </Fade>
     return (
         !isLoaded ? (<LoadingIndicator previewSize={size}/>) : (
-            <div className={previewStyle}>
-                {
-                    projectTitle ? <div className={styles.projectTitle}>{projectTitle[0].toUpperCase()
-                        + projectTitle.slice(1)}</div>
-                        : ""
-                }
-                {
-                    isLink ?
-                        <Fade in={true} timeout={400} mountOnEnter unmountOnExit>
-                            <Link to={{pathname: "project", state: {activeId}}}>
-                                {previewElement}
-                            </Link>
-                        </Fade> : <Fade in={true} timeout={400} mountOnEnter unmountOnExit>
-                            {previewElement}
-                        </Fade>
-                }
-            </div>
+            isLink ? <Link to={{pathname: "project", state: {activeId}}}>
+                    {previewContainer}
+                </Link> :
+                previewContainer
         )
     )
 }

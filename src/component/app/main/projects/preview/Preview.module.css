@@ -1,3 +1,8 @@
+.smallPreview, .normalPreview, .bigPreview {
+    overflow: hidden;
+    position: relative;
+}
+
 .smallPreview {
     text-align: center;
     z-index: 0;

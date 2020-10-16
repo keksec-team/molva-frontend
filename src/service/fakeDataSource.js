@@ -5,11 +5,16 @@ export const allProjects = [
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pulvinar purus augue, sed iaculis enim egestas et. Morbi tincidunt neque dictum justo congue, eu pretium magna fermentum. Pellentesque nec convallis odio, ac viverra magna. Fusce sed pulvinar enim. Etiam in urna dapibus, pulvinar est finibus, suscipit leo. Sed elementum elit velit, a aliquet lacus vulputate vitae. Maecenas id orci ullamcorper, feugiat nulla ac, dignissim quam. Nullam faucibus consequat ligula malesuada luctus. Quisque lobortis quis felis et laoreet. Curabitur euismod ac diam quis ullamcorper. Sed at orci enim. Mauris hendrerit leo vel placerat finibus. Fusce eleifend hendrerit facilisis. Nullam nec lorem non est fermentum rhoncus at ut enim.",
         previewType: "image",
         previewUrl: "https://www.mirf.ru/wp-content/uploads/2020/01/Deca-Dense.jpg",
-        files: Array.from({length: 15}, () => {
-            return {
-                type: "image",
-                url: "https://www.mirf.ru/wp-content/uploads/2020/01/Deca-Dense.jpg"
+        files: Array.from({length: 5}, () => {
+            let type, url;
+            if (Math.random() > 0.5) {
+                type = "video";
+                url = "https://archive.org/download/Popeye_forPresident/Popeye_forPresident_512kb.mp4";
+            } else {
+                type = "image";
+                url = "https://www.mirf.ru/wp-content/uploads/2020/01/Deca-Dense.jpg";
             }
+            return {type, url}
         })
     },
     {
@@ -59,21 +64,21 @@ export const allProjects = [
         name: "Shrek",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pulvinar purus augue, sed iaculis enim egestas et. Morbi tincidunt neque dictum justo congue, eu pretium magna fermentum. Pellentesque nec convallis odio, ac viverra magna. Fusce sed pulvinar enim. Etiam in urna dapibus, pulvinar est finibus, suscipit leo. Sed elementum elit velit, a aliquet lacus vulputate vitae. Maecenas id orci ullamcorper, feugiat nulla ac, dignissim quam. Nullam faucibus consequat ligula malesuada luctus. Quisque lobortis quis felis et laoreet. Curabitur euismod ac diam quis ullamcorper. Sed at orci enim. Mauris hendrerit leo vel placerat finibus. Fusce eleifend hendrerit facilisis. Nullam nec lorem non est fermentum rhoncus at ut enim.",
         previewType: "video",
-        previewUrl: "https://youtu.be/xqlVyq0XVYs"
+        previewUrl: "https://archive.org/download/Popeye_forPresident/Popeye_forPresident_512kb.mp4"
     },
     {
         id: 9,
         name: "Shrek",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pulvinar purus augue, sed iaculis enim egestas et. Morbi tincidunt neque dictum justo congue, eu pretium magna fermentum. Pellentesque nec convallis odio, ac viverra magna. Fusce sed pulvinar enim. Etiam in urna dapibus, pulvinar est finibus, suscipit leo. Sed elementum elit velit, a aliquet lacus vulputate vitae. Maecenas id orci ullamcorper, feugiat nulla ac, dignissim quam. Nullam faucibus consequat ligula malesuada luctus. Quisque lobortis quis felis et laoreet. Curabitur euismod ac diam quis ullamcorper. Sed at orci enim. Mauris hendrerit leo vel placerat finibus. Fusce eleifend hendrerit facilisis. Nullam nec lorem non est fermentum rhoncus at ut enim.",
         previewType: "video",
-        previewUrl: "https://youtu.be/xqlVyq0XVYs"
+        previewUrl: "https://archive.org/download/Popeye_forPresident/Popeye_forPresident_512kb.mp4"
     },
     {
         id: 10,
         name: "Shrek",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pulvinar purus augue, sed iaculis enim egestas et. Morbi tincidunt neque dictum justo congue, eu pretium magna fermentum. Pellentesque nec convallis odio, ac viverra magna. Fusce sed pulvinar enim. Etiam in urna dapibus, pulvinar est finibus, suscipit leo. Sed elementum elit velit, a aliquet lacus vulputate vitae. Maecenas id orci ullamcorper, feugiat nulla ac, dignissim quam. Nullam faucibus consequat ligula malesuada luctus. Quisque lobortis quis felis et laoreet. Curabitur euismod ac diam quis ullamcorper. Sed at orci enim. Mauris hendrerit leo vel placerat finibus. Fusce eleifend hendrerit facilisis. Nullam nec lorem non est fermentum rhoncus at ut enim.",
         previewType: "video",
-        previewUrl: "https://youtu.be/xqlVyq0XVYs"
+        previewUrl: "https://archive.org/download/Popeye_forPresident/Popeye_forPresident_512kb.mp4"
     }
 ]
 

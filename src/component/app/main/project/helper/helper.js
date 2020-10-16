@@ -5,8 +5,17 @@ const getMaxCnt = (val) => {
         }
     }
 }
-export const getGrid = (size) => {
-    let k = size;
+export const getGrid = (files) => {
+    let k = files.length;
+    files.sort((a, b) => {
+        if (a.type === "video" && b.type !== "video") {
+            return -1;
+        }
+        if (a.type !== "video" && b.type === "video") {
+            return 1;
+        }
+        return 0;
+    })
     let blocks = [
         [1],
         [2],
@@ -17,6 +26,11 @@ export const getGrid = (size) => {
         [1, 3, 1, 2]
     ]
     let totalCells = [];
+    const amountOfVideos = files.filter(file => file.type === "video").length;
+    for (let i = 0; i < amountOfVideos; i++) {
+        totalCells.push(blocks[0]);
+        k -= blocks[0][0];
+    }
     while (k > 0) {
         let maxDivisor = getMaxCnt(k);
         Array.prototype.push.apply(totalCells, blocks[maxDivisor - 1]);
