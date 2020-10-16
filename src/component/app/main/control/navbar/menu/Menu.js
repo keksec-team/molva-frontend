@@ -6,7 +6,6 @@ import {Link} from 'react-router-dom';
 import LanguageSwitch from "../../switch/LanguageSwitch";
 
 function Menu(props) {
-    const {dispatch} = props;
     let strings = getStringsByLocale(props.locale);
     return (
         <div className={styles.menu} id="menu">

@@ -12,13 +12,13 @@ import Projects from "./projects/Projects";
 import Social from "./control/social/Social";
 import Project from "./project/Project";
 
-function Main(props) {
+function Main() {
     return (
         <div className="main">
             <BrowserRouter>
                 <Navbar/>
                 <div className={styles.screen} id="screen">
-                    <Route path="/">
+                    <Route exact path="/">
                         <Redirect to="/home"/>
                     </Route>
                     <Route path="/home" component={Home}/>
