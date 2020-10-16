@@ -85,8 +85,8 @@ function Project(props) {
                                                         {
                                                             projectFile.type === "image" ?
                                                                 <img src={projectFile.url} alt=""/> :
-                                                                <Video src={projectFile.url}
-                                                                       id={i}
+                                                                <Video activeId={"preview-" + i}
+                                                                       activeSrc={projectFile.url}
                                                                        controls={false}
                                                                        type="video/mp4"
                                                                        autoplay={true}/>
@@ -101,7 +101,7 @@ function Project(props) {
                                                     project.files.map((projectFile, i) =>
                                                         <Preview activeSrc={projectFile.url}
                                                                  activeType={projectFile.type}
-                                                                 activeId={projectFile.id}
+                                                                 activeId={i}
                                                                  isLink={false}
                                                                  isLoaded={isLoaded}
                                                                  size={0}

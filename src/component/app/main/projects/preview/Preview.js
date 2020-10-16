@@ -16,7 +16,7 @@ function Preview(props) {
     const previewStyle = getPreviewStyle();
     const previewElement = activeType === "image" ?
         <img src={activeSrc} className={styles.previewPos} alt=""/> :
-        <Video src={activeSrc} id={activeId} controls={false} autoplay={true} type="video/mp4"/>
+        <Video activeId={"preview-" + activeId} activeSrc={activeSrc} controls={false} autoplay={true} type="video/mp4"/>
     const previewContainer = <Fade in={true} timeout={400} mountOnEnter unmountOnExit>
         <div className={previewStyle}>
             {
