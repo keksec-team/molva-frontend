@@ -6,7 +6,7 @@ import {LoadingIndicator} from "../../../helper/LoadingIndicator";
 
 function Preview(props) {
     //size parameter could be 0, 1, 2
-    const {activeSrc, activeType, activeId, isLink, size, isLoaded} = props;
+    const {activeSrc, activeType, activeId, isLink, size, isLoaded, projectTitle} = props;
     const getPreviewStyle = () => {
         if (size === 0) return styles.smallPreview;
         else if (size === 1) return styles.normalPreview;
@@ -24,6 +24,11 @@ function Preview(props) {
     return (
         !isLoaded ? (<LoadingIndicator previewSize={size}/>) : (
             <div className={previewStyle}>
+                {
+                    projectTitle ? <div className={styles.projectTitle}>{projectTitle[0].toUpperCase()
+                        + projectTitle.slice(1)}</div>
+                        : ""
+                }
                 {
                     isLink ?
                         <Fade in={true} timeout={400} mountOnEnter unmountOnExit>

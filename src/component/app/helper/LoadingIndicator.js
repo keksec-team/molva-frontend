@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./LoadingIndicator.module.css"
 import Loader from 'react-loader-spinner'
+import useWindowSize from "../main/control/helpers/useWindowSize";
 
 export const LoadingIndicator = (props) => {
     const { previewSize } = props;
@@ -9,8 +10,14 @@ export const LoadingIndicator = (props) => {
         else if (previewSize === 1) return styles.loaderForNormalPreview;
         else return styles.loaderForBigPreview;
     }
-    console.log(previewSize)
+    let {width} = useWindowSize();
+    let loaderWidth = 80;
+    let loaderHeight = 80;
+    if (width <= 650) {
+        loaderWidth = 50;
+        loaderHeight = 50;
+    }
     return <div className={previewSize != null ? getPreviewLoaderStyle() : ""}>
-        <Loader type="Bars" color="#FFFFFF" height={80} width={80} />
+        <Loader type="Bars" color="#FFFFFF" height={loaderHeight} width={loaderWidth} />
     </div>
 }

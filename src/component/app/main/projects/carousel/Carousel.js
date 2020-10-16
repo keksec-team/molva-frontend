@@ -22,6 +22,7 @@ function Carousel(props) {
                         <Preview activeSrc={project.previewUrl}
                                  activeType={project.previewType}
                                  activeId={project.id}
+                                 projectTitle={project.name}
                                  isLink={true}
                                  isLoaded={props.isLoaded}
                                  size={0}

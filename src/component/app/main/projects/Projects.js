@@ -48,6 +48,7 @@ function Projects(props) {
                             <Preview activeSrc={project.previewUrl}
                                      activeType={project.previewType}
                                      activeId={project.id}
+                                     projectTitle={project.name}
                                      isLink={true}
                                      isLoaded={isLoaded}
                                      size={0}

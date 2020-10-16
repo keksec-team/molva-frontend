@@ -1,5 +1,6 @@
 .smallPreview {
     text-align: center;
+    z-index: 0;
     width: 23vw;
     height: 32vh;
     display: inline-block;
@@ -14,6 +15,7 @@
 
 .normalPreview {
     display: inline-block;
+    z-index: 0;
     text-align: center;
     margin-right: 1.2vw;
     width: 76vmin;
@@ -28,6 +30,7 @@
 
 .bigPreview {
     float: right;
+    z-index: 0;
     text-align: center;
     width: 120vmin;
     height: 75vmin;
@@ -45,6 +48,17 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.projectTitle {
+    z-index: 1;
+    display: block;
+    position: absolute;
+    padding: 1vmin;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    font-family: MyriadProBold, serif;
+    font-size: 1.5em;
 }
 
 @media only screen and (max-width: 1800px) {
@@ -110,5 +124,9 @@
     .bigPreview {
         width: 100vmin;
         height: 100vmin;
+    }
+
+    .projectTitle {
+        font-size: 0.8em;
     }
 }

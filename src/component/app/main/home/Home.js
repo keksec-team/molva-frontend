@@ -13,14 +13,13 @@ import Fade from "@material-ui/core/Fade";
 function Home(props) {
     const [isLoaded, setLoaded] = useState(false);
     const [latestProjects, setLatestProjects] = useState([]);
+    const [currentActive, setCurrentActive] = useState(0);
     let strings = getStringsByLocale(props.locale);
 
     getLatestProjects().then((res) => {
         setLatestProjects(res);
         setLoaded(true);
     });
-
-    const [currentActive, setCurrentActive] = useState(0);
 
     useEffect(() => {
         let interval = setInterval(() => {
@@ -46,13 +45,27 @@ function Home(props) {
                     </div>
                 </Slide>
                 <div className={styles.projectContainer}>
-                    <Preview activeSrc={latestProjects[currentActive] ? latestProjects[currentActive].previewUrl : ""}
-                             activeType={latestProjects[currentActive] ? latestProjects[currentActive].previewType : ""}
-                             activeId={latestProjects[currentActive] ? latestProjects[currentActive].id : ""}
-                             isLink={true}
-                             isLoaded={isLoaded}
-                             size={2}
-                             key={currentActive}
+                    <Preview
+                        activeSrc={
+                            latestProjects[currentActive] ?
+                                latestProjects[currentActive].previewUrl : ""
+                        }
+                        activeType={
+                            latestProjects[currentActive] ?
+                                latestProjects[currentActive].previewType : ""
+                        }
+                        activeId={
+                            latestProjects[currentActive] ?
+                                latestProjects[currentActive].id : ""
+                        }
+                        projectTitle={
+                            latestProjects[currentActive] ?
+                                latestProjects[currentActive].name : ""
+                        }
+                        isLink={true}
+                        isLoaded={isLoaded}
+                        size={2}
+                        key={currentActive}
                     />
                     <div className={styles.switchLines}>
                         {
