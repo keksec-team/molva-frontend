@@ -4,7 +4,7 @@ import styles from "./Main.module.css";
 import Navbar from "./control/navbar/Navbar";
 import LanguageSwitch from "./control/switch/LanguageSwitch";
 import {BrowserRouter} from "react-router-dom";
-import {Route} from "react-router";
+import {Route, Redirect} from "react-router";
 import Home from "./home/Home";
 import About from "./about/About";
 import Contacts from "./contacts/Contacts";
@@ -18,6 +18,9 @@ function Main(props) {
             <BrowserRouter>
                 <Navbar/>
                 <div className={styles.screen} id="screen">
+                    <Route path="/">
+                        <Redirect to="/home"/>
+                    </Route>
                     <Route path="/home" component={Home}/>
                     <Route path="/about" component={About}/>
                     <Route path="/project" component={Project}/>
