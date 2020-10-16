@@ -65,6 +65,8 @@ function Home(props) {
                         isLink={true}
                         isLoaded={isLoaded}
                         size={2}
+                        autoplay={true}
+                        controls={false}
                         key={currentActive}
                     />
                     <div className={styles.switchLines}>

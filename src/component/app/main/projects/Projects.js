@@ -51,6 +51,8 @@ function Projects(props) {
                                      projectTitle={project.name}
                                      isLink={true}
                                      isLoaded={isLoaded}
+                                     autoplay={true}
+                                     controls={false}
                                      size={0}
                                      key={i}/>
                         )

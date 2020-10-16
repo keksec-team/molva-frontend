@@ -67,7 +67,10 @@ function Project(props) {
                                              activeId={project.id}
                                              isLink={false}
                                              isLoaded={isLoaded}
-                                             size={1}/>
+                                             size={1}
+                                             autoplay={true}
+                                             controls={false}
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -87,9 +90,10 @@ function Project(props) {
                                                                 <img src={projectFile.url} alt=""/> :
                                                                 <Video activeId={"preview-" + i}
                                                                        activeSrc={projectFile.url}
-                                                                       controls={false}
                                                                        type="video/mp4"
-                                                                       autoplay={true}/>
+                                                                       autoplay={false}
+                                                                       controls={true}
+                                                                />
                                                         }
                                                     </GridListTile>
                                                 ))}
@@ -104,6 +108,8 @@ function Project(props) {
                                                                  activeId={i}
                                                                  isLink={false}
                                                                  isLoaded={isLoaded}
+                                                                 autoplay={false}
+                                                                 controls={true}
                                                                  size={0}
                                                                  key={i}/>
                                                     ) : ""
