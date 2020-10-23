@@ -11,6 +11,7 @@ import Contacts from "./contacts/Contacts";
 import Projects from "./projects/Projects";
 import Social from "./control/social/Social";
 import Project from "./project/Project";
+import {pages, resolvePath} from "../../../resources/paths";
 
 function Main() {
     return (
@@ -19,13 +20,13 @@ function Main() {
                 <Navbar/>
                 <div className={styles.screen} id="screen">
                     <Route exact path="/">
-                        <Redirect to="/home"/>
+                        <Redirect to={resolvePath(pages.HOME)}/>
                     </Route>
-                    <Route path="/home" component={Home}/>
-                    <Route path="/about" component={About}/>
-                    <Route path="/project" component={Project}/>
-                    <Route path="/projects" component={Projects}/>
-                    <Route path="/contacts" component={Contacts}/>
+                    <Route path={resolvePath(pages.HOME)} component={Home}/>
+                    <Route path={resolvePath(pages.ABOUT)} component={About}/>
+                    <Route path={resolvePath(pages.PROJECT)} component={Project}/>
+                    <Route path={resolvePath(pages.PROJECTS)} component={Projects}/>
+                    <Route path={resolvePath(pages.CONTACTS)} component={Contacts}/>
                 </div>
                 <div className={styles.mainSwitchContainer}>
                     <LanguageSwitch/>
