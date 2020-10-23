@@ -10,7 +10,6 @@ import Preview from "./preview/Preview";
 import useWindowSize from "../control/helpers/useWindowSize";
 import Fade from "@material-ui/core/Fade";
 import {LoadingIndicator} from "../../helper/LoadingIndicator";
-import {categories} from "../../../../resources/categories";
 
 function Projects(props) {
     let strings = getStringsByLocale(props.locale);
