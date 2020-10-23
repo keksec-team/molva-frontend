@@ -8,6 +8,7 @@ import Preview from "../projects/preview/Preview";
 import {Link} from "react-router-dom";
 import {LoadingIndicator} from "../../helper/LoadingIndicator";
 import Fade from "@material-ui/core/Fade";
+import {pages} from "../../../../resources/paths";
 
 
 function Home(props) {
@@ -38,7 +39,7 @@ function Home(props) {
                             <p className={styles.mainDescription}>{strings.mainDescription}</p>
                         </div>
                         <div className={styles.buttonContainer}>
-                            <Link to="/projects">
+                            <Link to={pages.PROJECTS}>
                                 <button className={styles.ourProjects}>{strings.ourProjects}</button>
                             </Link>
                         </div>
@@ -62,7 +63,7 @@ function Home(props) {
                             latestProjects[currentActive] ?
                                 latestProjects[currentActive].name : ""
                         }
-                        isLink={true}
+                        link={pages.PROJECT}
                         isLoaded={isLoaded}
                         size={2}
                         autoplay={true}

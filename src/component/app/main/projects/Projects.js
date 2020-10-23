@@ -10,6 +10,7 @@ import Preview from "./preview/Preview";
 import useWindowSize from "../control/helpers/useWindowSize";
 import Fade from "@material-ui/core/Fade";
 import {LoadingIndicator} from "../../helper/LoadingIndicator";
+import {pages} from "../../../../resources/paths";
 
 function Projects(props) {
     let strings = getStringsByLocale(props.locale);
@@ -55,7 +56,7 @@ function Projects(props) {
                                      activeType={project.previewType}
                                      activeId={project.id}
                                      projectTitle={project.name}
-                                     isLink={true}
+                                     link={pages.PROJECT}
                                      isLoaded={isLoaded}
                                      autoplay={true}
                                      controls={false}

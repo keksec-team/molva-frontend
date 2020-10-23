@@ -4,7 +4,6 @@ import {Link} from 'react-router-dom';
 import React from "react";
 import {LoadingIndicator} from "../../../helper/LoadingIndicator";
 import {Video} from "../../../helper/Video";
-import {pages} from "../../../../../resources/paths";
 
 function Preview(props) {
     //size parameter could be 0, 1, 2
@@ -12,7 +11,7 @@ function Preview(props) {
         activeSrc,
         activeType,
         activeId,
-        isLink,
+        link,
         size,
         isLoaded,
         projectTitle,
@@ -44,7 +43,7 @@ function Preview(props) {
     </Fade>
     return (
         !isLoaded ? (<LoadingIndicator previewSize={size}/>) : (
-            isLink ? <Link to={{pathname: pages.PROJECT, state: {activeId}}}>
+            link ? <Link to={{pathname: link, state: {activeId}}}>
                     {previewContainer}
                 </Link> :
                 previewContainer

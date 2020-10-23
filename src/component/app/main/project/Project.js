@@ -65,7 +65,6 @@ function Project(props) {
                                     <Preview activeSrc={project.previewUrl}
                                              activeType={project.previewType}
                                              activeId={project.id}
-                                             isLink={false}
                                              isLoaded={isLoaded}
                                              size={1}
                                              autoplay={true}
