@@ -88,9 +88,9 @@ export const latestProjects = [
     allProjects[2]
 ]
 
-export const projectsByCategories = {
-    "apps": allProjects.slice(0, 4),
-    "sites": allProjects.slice(4, 5),
-    "games": allProjects.slice(5, 7),
-    "films": allProjects.slice(7, 11)
-}
+export const projectsByCategories = [
+    allProjects.slice(0, 4),
+    allProjects.slice(4, 5),
+    allProjects.slice(5, 7),
+    allProjects.slice(7, 11)
+]

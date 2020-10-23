@@ -10,10 +10,17 @@ import Preview from "./preview/Preview";
 import useWindowSize from "../control/helpers/useWindowSize";
 import Fade from "@material-ui/core/Fade";
 import {LoadingIndicator} from "../../helper/LoadingIndicator";
+import {categories} from "../../../../resources/categories";
 
 function Projects(props) {
     let strings = getStringsByLocale(props.locale);
-    const [currentActiveCategory, setCurrentActiveCategory] = useState("apps");
+    let PROJECT_CATEGORIES = [
+        strings.appsCategory,
+        strings.sitesCategory,
+        strings.gamesCategory,
+        strings.filmsCategory
+    ]
+    const [currentActiveCategory, setCurrentActiveCategory] = useState(0);
     const [projectsByActiveCategory, setProjectsByActiveCategory] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [error, setError] = useState(false);
@@ -71,8 +78,10 @@ function Projects(props) {
                 <Slide direction="right" in={true} mountOnEnter unmountOnExit>
                     <div>
                         <h1 className={styles.title}>{strings.projectsTitle}</h1>
-                        <Categories activeCategory={currentActiveCategory}
-                                    setCurrentActiveCategory={setCurrentActiveCategory}/>
+                        <Categories
+                            categories={PROJECT_CATEGORIES}
+                            activeCategoryIndex={currentActiveCategory}
+                            setCurrentActiveCategory={setCurrentActiveCategory}/>
                     </div>
                 </Slide>
                 {
