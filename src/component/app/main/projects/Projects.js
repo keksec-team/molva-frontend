@@ -9,12 +9,8 @@ import Carousel from "./carousel/Carousel";
 import Preview from "./preview/Preview";
 import useWindowSize from "../controls/helpers/useWindowSize";
 import Fade from "@material-ui/core/Fade";
-<<<<<<< HEAD
 import {LoadingIndicator} from "../../helper/loading/LoadingIndicator";
-=======
-import {LoadingIndicator} from "../../helper/LoadingIndicator";
 import {pages} from "../../../../resources/paths";
->>>>>>> 2e9a8e70dcfb71e0d55e5bce19653ee817e158b9
 
 function Projects(props) {
     let strings = getStringsByLocale(props.locale);
