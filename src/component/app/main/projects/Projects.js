@@ -7,9 +7,9 @@ import {Slide} from "@material-ui/core";
 import Categories from "./categories/Categories";
 import Carousel from "./carousel/Carousel";
 import Preview from "./preview/Preview";
-import useWindowSize from "../control/helpers/useWindowSize";
+import useWindowSize from "../controls/helpers/useWindowSize";
 import Fade from "@material-ui/core/Fade";
-import {LoadingIndicator} from "../../helper/LoadingIndicator";
+import {LoadingIndicator} from "../../helper/loading/LoadingIndicator";
 
 function Projects(props) {
     let strings = getStringsByLocale(props.locale);

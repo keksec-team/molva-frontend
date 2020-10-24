@@ -1,22 +1,26 @@
 import React from "react";
 import {connect} from 'react-redux';
 import styles from "./Main.module.css";
-import Navbar from "./control/navbar/Navbar";
-import LanguageSwitch from "./control/switch/LanguageSwitch";
+import Navbar from "./controls/navbar/Navbar";
+import LanguageSwitch from "./controls/switch/LanguageSwitch";
 import {BrowserRouter} from "react-router-dom";
 import {Route, Redirect} from "react-router";
 import Home from "./home/Home";
 import About from "./about/About";
 import Contacts from "./contacts/Contacts";
 import Projects from "./projects/Projects";
-import Social from "./control/social/Social";
+import Social from "./controls/social/Social";
 import Project from "./project/Project";
+import Login from "./login/Login";
 
-function Main() {
+function Main(props) {
+    const { loginPageActive } = props;
     return (
         <div className="main">
             <BrowserRouter>
-                <Navbar/>
+                {
+                    loginPageActive ? "" : <Navbar/>
+                }
                 <div className={styles.screen} id="screen">
                     <Route exact path="/">
                         <Redirect to="/home"/>
@@ -26,11 +30,14 @@ function Main() {
                     <Route path="/project" component={Project}/>
                     <Route path="/projects" component={Projects}/>
                     <Route path="/contacts" component={Contacts}/>
+                    <Route path="/login" component={Login}/>
                 </div>
                 <div className={styles.mainSwitchContainer}>
                     <LanguageSwitch/>
                 </div>
-                <Social/>
+                {
+                    loginPageActive ? "" : <Social/>
+                }
             </BrowserRouter>
         </div>
     );
@@ -39,6 +46,7 @@ function Main() {
 const mapStateToProps = state => ({
     theme: state.style.theme,
     isToggled: state.controls.navbarToggled,
+    loginPageActive: state.controls.loginPageActive,
     locale: state.language.locale
 })
 

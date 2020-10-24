@@ -6,3 +6,10 @@ export const setToggledAction = (isToggled) => {
         navbarToggled: isToggled
     };
 };
+
+export const setLoginPageActive = (isActive) => {
+    return {
+        type: actionTypes.SET_LOGIN_PAGE_ACTIVE,
+        loginPageActive: isActive
+    }
+}

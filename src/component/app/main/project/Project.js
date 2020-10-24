@@ -10,9 +10,9 @@ import Fade from "@material-ui/core/Fade";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
 import {getGrid} from "./helper/helper";
-import {LoadingIndicator} from "../../helper/LoadingIndicator";
-import useWindowSize from "../control/helpers/useWindowSize";
-import {Video} from "../../helper/Video";
+import {LoadingIndicator} from "../../helper/loading/LoadingIndicator";
+import useWindowSize from "../controls/helpers/useWindowSize";
+import {Video} from "../../helper/video/Video";
 
 
 function Project(props) {

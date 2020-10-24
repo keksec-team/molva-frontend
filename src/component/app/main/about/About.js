@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {getStringsByLocale} from "../../../../resources/languages";
 import styles from "./About.module.css";
 import {Slide} from "@material-ui/core";
-import useWindowSize from "../control/helpers/useWindowSize";
+import useWindowSize from "../controls/helpers/useWindowSize";
 
 function About(props) {
     let strings = getStringsByLocale(props.locale);

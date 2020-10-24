@@ -6,7 +6,7 @@ import {getLatestProjects} from "../../../../service/fakeDataService";
 import {Slide} from '@material-ui/core';
 import Preview from "../projects/preview/Preview";
 import {Link} from "react-router-dom";
-import {LoadingIndicator} from "../../helper/LoadingIndicator";
+import {LoadingIndicator} from "../../helper/loading/LoadingIndicator";
 import Fade from "@material-ui/core/Fade";
 
 

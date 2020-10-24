@@ -2,8 +2,8 @@ import Fade from "@material-ui/core/Fade";
 import styles from "./Preview.module.css";
 import {Link} from 'react-router-dom';
 import React from "react";
-import {LoadingIndicator} from "../../../helper/LoadingIndicator";
-import {Video} from "../../../helper/Video";
+import {LoadingIndicator} from "../../../helper/loading/LoadingIndicator";
+import {Video} from "../../../helper/video/Video";
 
 function Preview(props) {
     //size parameter could be 0, 1, 2

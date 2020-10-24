@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import styles from "./ReactHookForm.module.css";
 import React, {useState} from "react";
 import {useForm} from "react-hook-form";
-import {CustomInputField, useStyles} from "./input/CustomInput";
+import {CustomInputField, useStyles} from "../../../helper/input/CustomInput";
 
 
 function ReactHookForm(props) {
@@ -54,7 +54,7 @@ function ReactHookForm(props) {
                         },
                     })}
                     autoComplete='name'
-                    error={!!errors.name}
+                    error={errors.name}
                 />
 
                 <CustomInputField
@@ -69,7 +69,7 @@ function ReactHookForm(props) {
                         maxLength: 30,
                     }}
                     autoComplete='tel'
-                    error={!!errors.phone}
+                    error={errors.phone}
                     inputRef={register()}
                     defaultValue={phone}
                 />
@@ -92,7 +92,7 @@ function ReactHookForm(props) {
                         }
                     })}
                     autoComplete='email'
-                    error={!!errors.email}
+                    error={errors.email}
                     defaultValue={email}
                 />
 
@@ -110,7 +110,7 @@ function ReactHookForm(props) {
                         maxLength: 3000,
                     }}
                     inputRef={register()}
-                    error={!!errors.description}
+                    error={errors.description}
                     defaultValue={description}
                 />
             </div>
