@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Preview from "../preview/Preview";
+import {pages} from "../../../../../resources/paths";
 
 function Carousel(props) {
     let settings = {
@@ -23,7 +24,7 @@ function Carousel(props) {
                                  activeType={project.previewType}
                                  activeId={project.id}
                                  projectTitle={project.name}
-                                 isLink={true}
+                                 link={pages.PROJECT}
                                  isLoaded={props.isLoaded}
                                  size={0}
                                  key={i}/>
