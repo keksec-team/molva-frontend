@@ -11,8 +11,8 @@ function Carousel(props) {
         dots: false,
         slidesToShow: props.slidesToShow,
         slidesToScroll: 1,
-        nextArrow: <NextArrow />,
-        prevArrow: <PrevArrow />
+        nextArrow: <NextArrow/>,
+        prevArrow: <PrevArrow/>
     };
     return (
         <div className={styles.sliderContent}>
@@ -20,7 +20,13 @@ function Carousel(props) {
                 {
                     props.projects.map((project, i) =>
                         <Preview activeSrc={project.previewUrl}
-                    activeType={project.previewType} key={i}/>
+                                 activeType={project.previewType}
+                                 activeId={project.id}
+                                 projectTitle={project.name}
+                                 isLink={true}
+                                 isLoaded={props.isLoaded}
+                                 size={0}
+                                 key={i}/>
                     )
                 }
             </Slider>
@@ -29,7 +35,7 @@ function Carousel(props) {
 }
 
 function NextArrow(props) {
-    const { className, style, onClick } = props;
+    const {className, style, onClick} = props;
     return (
         <img src={require('../../../../../assets/rightarrow.svg')}
              className={className}
@@ -40,7 +46,7 @@ function NextArrow(props) {
 }
 
 function PrevArrow(props) {
-    const { className, style, onClick } = props;
+    const {className, style, onClick} = props;
     return (
         <img src={require('../../../../../assets/leftarrow.svg')}
              className={className}

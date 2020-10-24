@@ -11,31 +11,6 @@
     min-width: 100%;
 }
 
-.Loader {
-    position: relative;
-    padding-left: 50%;
-    margin-top: 25%;
-}
-
-.preview {
-    position: relative;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 1;
-}
-
-.previewContainer {
-    float: right;
-    width: 120vmin;
-    height: 75vmin;
-    border-left: 3px solid var(--highlighted-text);
-    border-top: 3px solid var(--highlighted-text);
-    border-bottom: 3px solid var(--highlighted-text);
-    border-radius: 8px 0 0 8px;
-}
-
 .hr {
     display: inline-block;
     width: 18vmin;
@@ -103,19 +78,7 @@
     opacity: 0;
 }
 
-@media only screen and (max-width: 1800px) {
-    .previewContainer {
-        width: 100vmin;
-        height: 65vmin;
-    }
-}
-
 @media only screen and (max-width: 1700px) {
-    .previewContainer {
-        width: 85vmin;
-        height: 55vmin;
-    }
-
     .projectContainer {
         margin-top: 10vh;
     }
@@ -128,13 +91,6 @@
 @media only screen and (max-width: 1450px) {
     .textContainer {
         max-width: 100%;
-    }
-
-    .previewContainer {
-        width: 100vmax;
-        height: 65vmax;
-        border-left: none;
-        border-radius: 0;
     }
 
     .projectContainer {
@@ -167,22 +123,12 @@
 }
 
 @media only screen and (max-width: 950px) {
-    .previewContainer {
-        width: 100vmin;
-        height: 65vmin;
-    }
-
     .projectContainer {
         width: 100%;
     }
 }
 
 @media only screen and (max-width: 650px) {
-    .previewContainer {
-        width: 100vmin;
-        height: 100vmin;
-    }
-
     .homeElementsContainer {
         padding-top: 15vmin;
     }

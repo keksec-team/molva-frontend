@@ -1,0 +1,78 @@
+.loaderForSmallPreview, .loaderForNormalPreview, .loaderForBigPreview {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loaderForSmallPreview {
+    width: 23vw;
+    height: 32vh;
+}
+
+.loaderForNormalPreview {
+    width: 76vmin;
+    height: 44vmin;
+}
+
+.loaderForBigPreview {
+    width: 120vmin;
+    height: 75vmin;
+}
+
+@media only screen and (max-width: 1800px) {
+    .loaderForBigPreview {
+        width: 100vmin;
+        height: 65vmin;
+    }
+}
+
+@media only screen and (max-width: 1700px) {
+    .loaderForBigPreview {
+        width: 85vmin;
+        height: 55vmin;
+    }
+}
+
+@media only screen and (max-width: 1450px) {
+    .loaderForBigPreview {
+        width: 100vmax;
+        height: 65vmax;
+    }
+
+    .loaderForNormalPreview {
+        width: 57vmin;
+        height: 33vmin;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .loaderForNormalPreview {
+        width: calc(100% - 6px);
+        height: calc((100% - 6px) / 1.7);
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .loaderForBigPreview {
+        width: 100vmin;
+        height: 65vmin;
+    }
+
+    .loaderForSmallPreview {
+        width: 75vw;
+        margin-top: 2.5vh;
+        margin-bottom: 2.5vh;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .loaderForSmallPreview {
+        height: 24vh;
+    }
+
+    .loaderForBigPreview {
+        width: 100vmin;
+        height: 100vmin;
+    }
+}

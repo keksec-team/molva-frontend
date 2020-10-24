@@ -1,6 +1,14 @@
-.preview {
+.smallPreview, .normalPreview, .bigPreview {
+    overflow: hidden;
+    position: relative;
+}
+
+.smallPreview {
+    text-align: center;
+    z-index: 0;
     width: 23vw;
     height: 32vh;
+    display: inline-block;
     border: 3px solid var(--highlighted-text);
     border-radius: 8px;
     margin-right: 2vw;
@@ -10,8 +18,98 @@
     cursor: pointer;
 }
 
+.normalPreview {
+    display: inline-block;
+    z-index: 0;
+    text-align: center;
+    margin-right: 1.2vw;
+    width: 76vmin;
+    height: 44vmin;
+    border: 3px solid var(--highlighted-text);
+    border-radius: 8px;
+    margin-top: 4vh;
+    margin-left: 2vw;
+    object-fit: cover;
+    opacity: 1;
+}
+
+.bigPreview {
+    float: right;
+    z-index: 0;
+    text-align: center;
+    width: 120vmin;
+    height: 75vmin;
+    border-left: 3px solid var(--highlighted-text);
+    border-top: 3px solid var(--highlighted-text);
+    border-bottom: 3px solid var(--highlighted-text);
+    border-radius: 8px 0 0 8px;
+    object-fit: cover;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.previewPos {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.projectTitle {
+    z-index: 1;
+    display: block;
+    position: absolute;
+    padding: 1vmin;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    font-family: MyriadProBold, serif;
+    font-size: 1.5em;
+}
+
+@media only screen and (max-width: 1800px) {
+    .bigPreview {
+        width: 100vmin;
+        height: 65vmin;
+    }
+}
+
+@media only screen and (max-width: 1700px) {
+    .bigPreview {
+        width: 85vmin;
+        height: 55vmin;
+    }
+}
+
+@media only screen and (max-width: 1450px) {
+    .bigPreview {
+        width: 100vmax;
+        height: 65vmax;
+        border-left: none;
+        border-radius: 0;
+    }
+
+    .normalPreview {
+        width: 57vmin;
+        height: 33vmin;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .normalPreview {
+        width: 76vmin;
+        height: 44vmin;
+        margin: 4vh 0 0;
+        float: none;
+    }
+}
+
 @media only screen and (max-width: 1000px) {
-    .preview {
+    .bigPreview {
+        width: 100vmin;
+        height: 65vmin;
+    }
+
+    .smallPreview {
         width: 75vw;
         margin-top: 2.5vh;
         margin-bottom: 2.5vh;
@@ -19,7 +117,21 @@
 }
 
 @media only screen and (max-width: 650px) {
-    .preview {
+    .smallPreview {
         height: 24vh;
+    }
+
+    .normalPreview {
+        width: 75vw;
+        height: 24vh;
+    }
+
+    .bigPreview {
+        width: 100vmin;
+        height: 100vmin;
+    }
+
+    .projectTitle {
+        font-size: 0.8em;
     }
 }

@@ -53,7 +53,6 @@ function ReactHookForm(props) {
                             message: strings.validationNameLength
                         },
                     })}
-                    fullWidth
                     autoComplete='name'
                     error={!!errors.name}
                 />
@@ -71,7 +70,6 @@ function ReactHookForm(props) {
                     }}
                     autoComplete='tel'
                     error={!!errors.phone}
-                    fullWidth
                     inputRef={register()}
                     defaultValue={phone}
                 />
@@ -95,7 +93,6 @@ function ReactHookForm(props) {
                     })}
                     autoComplete='email'
                     error={!!errors.email}
-                    fullWidth
                     defaultValue={email}
                 />
 
@@ -114,7 +111,6 @@ function ReactHookForm(props) {
                     }}
                     inputRef={register()}
                     error={!!errors.description}
-                    fullWidth
                     defaultValue={description}
                 />
             </div>

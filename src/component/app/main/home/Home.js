@@ -4,21 +4,23 @@ import styles from "./Home.module.css";
 import {connect} from 'react-redux';
 import {getLatestProjects} from "../../../../service/fakeDataService";
 import {Slide} from '@material-ui/core';
+import Preview from "../projects/preview/Preview";
+import {Link} from "react-router-dom";
 import {LoadingIndicator} from "../../helper/LoadingIndicator";
 import Fade from "@material-ui/core/Fade";
+import {pages} from "../../../../resources/paths";
 
 
 function Home(props) {
-    const [loading, setLoading] = React.useState(true);
-    const [latestProjects, setLatestProjects] = React.useState([]);
+    const [isLoaded, setLoaded] = useState(false);
+    const [latestProjects, setLatestProjects] = useState([]);
+    const [currentActive, setCurrentActive] = useState(0);
     let strings = getStringsByLocale(props.locale);
 
     getLatestProjects().then((res) => {
         setLatestProjects(res);
-        setLoading(false);
+        setLoaded(true);
     });
-
-    const [currentActive, setCurrentActive] = useState(0);
 
     useEffect(() => {
         let interval = setInterval(() => {
@@ -37,18 +39,37 @@ function Home(props) {
                             <p className={styles.mainDescription}>{strings.mainDescription}</p>
                         </div>
                         <div className={styles.buttonContainer}>
-                            <button className={styles.ourProjects}>{strings.ourProjects}</button>
+                            <Link to={pages.PROJECTS}>
+                                <button className={styles.ourProjects}>{strings.ourProjects}</button>
+                            </Link>
                         </div>
                     </div>
                 </Slide>
                 <div className={styles.projectContainer}>
-                    <div className={styles.previewContainer}>
-                        {loading
-                            ? <LoadingIndicator className={styles.Loader}/>
-                            : <Preview activeSrc={latestProjects[currentActive].previewUrl}
-                                       activeType={latestProjects[currentActive].previewType} key={currentActive}/>
+                    <Preview
+                        activeSrc={
+                            latestProjects[currentActive] ?
+                                latestProjects[currentActive].previewUrl : ""
                         }
-                    </div>
+                        activeType={
+                            latestProjects[currentActive] ?
+                                latestProjects[currentActive].previewType : ""
+                        }
+                        activeId={
+                            latestProjects[currentActive] ?
+                                latestProjects[currentActive].id : ""
+                        }
+                        projectTitle={
+                            latestProjects[currentActive] ?
+                                latestProjects[currentActive].name : ""
+                        }
+                        link={pages.PROJECT}
+                        isLoaded={isLoaded}
+                        size={2}
+                        autoplay={true}
+                        controls={false}
+                        key={currentActive}
+                    />
                     <div className={styles.switchLines}>
                         {
                             latestProjects.map(project =>
@@ -62,20 +83,6 @@ function Home(props) {
             </div>
         </div>
     );
-}
-
-function Preview(props) {
-    const {activeSrc, activeType} = props;
-    return (
-        <Fade in={true} timeout={400} mountOnEnter unmountOnExit>
-            {activeType === "image" ? <img className={styles.preview} src={activeSrc} alt=""/> :
-                <iframe className={styles.preview}
-                        src={activeSrc}
-                        allow="autoplay"
-                        frameBorder="0"
-                        allowFullScreen/>}
-        </Fade>
-    )
 }
 
 const mapStateToProps = state => ({

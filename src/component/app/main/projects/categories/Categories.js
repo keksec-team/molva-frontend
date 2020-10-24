@@ -1,21 +1,18 @@
-import {getStringsByLocale} from "../../../../../resources/languages";
 import styles from "./Categories.module.css";
 import React from "react";
 import {connect} from "react-redux";
 
 function Categories(props) {
-    let strings = getStringsByLocale(props.locale);
-    let categories = [strings.appsCategory, strings.sitesCategory, strings.gamesCategory, strings.filmsCategory]
-    let activeCategoryIndex = props.activeCategoryIndex;
-    console.log(activeCategoryIndex);
     return (
         <ul className={styles.categories}>
             {
-                categories.map((category, i) => (
-                    <li className={`${styles.category} ${i === activeCategoryIndex ? styles.active : ""}`} id={`category-${i}`} key={i}
-                        onClick={() => props.setCurrentActiveCategory(i)}
-                    >
-                        {category}
+                props.categories.map((categoryName, i) => (
+                    <li className={`${styles.category} 
+                    ${i === 0 ? styles.first : ""} 
+                    ${i === props.activeCategoryIndex ? styles.active : ""}`}
+                        id={`category-${categoryName}`} key={categoryName}
+                        onClick={() => props.setCurrentActiveCategory(i)}>
+                        {categoryName}
                     </li>
                 ))
             }
