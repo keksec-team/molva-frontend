@@ -9,11 +9,22 @@ import Carousel from "./carousel/Carousel";
 import Preview from "./preview/Preview";
 import useWindowSize from "../controls/helpers/useWindowSize";
 import Fade from "@material-ui/core/Fade";
+<<<<<<< HEAD
 import {LoadingIndicator} from "../../helper/loading/LoadingIndicator";
+=======
+import {LoadingIndicator} from "../../helper/LoadingIndicator";
+import {pages} from "../../../../resources/paths";
+>>>>>>> 2e9a8e70dcfb71e0d55e5bce19653ee817e158b9
 
 function Projects(props) {
     let strings = getStringsByLocale(props.locale);
-    const [currentActiveCategory, setCurrentActiveCategory] = useState("apps");
+    let PROJECT_CATEGORIES = [
+        strings.appsCategory,
+        strings.sitesCategory,
+        strings.gamesCategory,
+        strings.filmsCategory
+    ]
+    const [currentActiveCategory, setCurrentActiveCategory] = useState(0);
     const [projectsByActiveCategory, setProjectsByActiveCategory] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [error, setError] = useState(false);
@@ -49,7 +60,7 @@ function Projects(props) {
                                      activeType={project.previewType}
                                      activeId={project.id}
                                      projectTitle={project.name}
-                                     isLink={true}
+                                     link={pages.PROJECT}
                                      isLoaded={isLoaded}
                                      autoplay={true}
                                      controls={false}
@@ -71,8 +82,10 @@ function Projects(props) {
                 <Slide direction="right" in={true} mountOnEnter unmountOnExit>
                     <div>
                         <h1 className={styles.title}>{strings.projectsTitle}</h1>
-                        <Categories activeCategory={currentActiveCategory}
-                                    setCurrentActiveCategory={setCurrentActiveCategory}/>
+                        <Categories
+                            categories={PROJECT_CATEGORIES}
+                            activeCategoryIndex={currentActiveCategory}
+                            setCurrentActiveCategory={setCurrentActiveCategory}/>
                     </div>
                 </Slide>
                 {

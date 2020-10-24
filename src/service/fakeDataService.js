@@ -7,9 +7,9 @@ export const getLatestProjects = async() => {
     return latestProjects;
 }
 
-export const getProjectsByCategory = async (categoryName) => {
+export const getProjectsByCategory = async (categoryIndex) => {
     await delay(1000);
-    return projectsByCategories[categoryName]
+    return projectsByCategories[categoryIndex]
 }
 
 export const getProjectById = async (projectId) => {

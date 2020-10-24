@@ -11,7 +11,7 @@ function Preview(props) {
         activeSrc,
         activeType,
         activeId,
-        isLink,
+        link,
         size,
         isLoaded,
         projectTitle,
@@ -43,7 +43,7 @@ function Preview(props) {
     </Fade>
     return (
         !isLoaded ? (<LoadingIndicator previewSize={size}/>) : (
-            isLink ? <Link to={{pathname: "project", state: {activeId}}}>
+            link ? <Link to={{pathname: link, state: {activeId}}}>
                     {previewContainer}
                 </Link> :
                 previewContainer
