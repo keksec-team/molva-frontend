@@ -5,4 +5,42 @@
     align-items: center;
     min-height: 100%;
     min-width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("/loginBackground.png");
+}
+
+.loginFormContainer {
+    background-color: var(--background-color);
+    border-radius: 8px;
+    margin-top: 6vh;
+}
+
+.centerContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: -20vh;
+}
+
+.bigLogo {
+    margin: auto;
+    width: 15vmin;
+    height: 15vmin;
+}
+
+.backArrow {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-left: 2.5vw;
+    margin-top: 2.5vw;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 650px) {
+    .backArrow {
+        margin-left: 5vw;
+        margin-top: 5vw;
+    }
 }

@@ -28,6 +28,7 @@ function LoginForm(props) {
 
     return (
         <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+            <div className={styles.signInTitle}>{strings.signIn}</div>
             <div className={styles.fields}>
                 <CustomInputField
                     name="login"
@@ -75,7 +76,7 @@ function LoginForm(props) {
                     })}
                 />
             </div>
-            <button type='submit' onClick={() => onCLick()} className={styles.button}>{strings.contactUs}</button>
+            <button type='submit' onClick={() => onCLick()} className={styles.button}>{strings.continueOn}</button>
         </form>
     );
 }

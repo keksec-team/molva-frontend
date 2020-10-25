@@ -45,7 +45,9 @@ export let strings = {
         validationEmailRequired: "Поле 'Почта' является обязательным",
         validationLoginLength: "Поле 'Логин не может состоять из одного символа'",
         validationPasswordLength: "Пароль не может состоять из одного символа",
-        validationNameLength: "Имя не может состоять из одного символа"
+        validationNameLength: "Имя не может состоять из одного символа",
+        continueOn: "Продолжить",
+        signIn: "ВХОД"
     },
     english: {
         home: "Home",
@@ -89,6 +91,8 @@ export let strings = {
         validationEmailWrongPattern:"Invalid email address",
         validationNameRequired: "The 'Name' is required",
         validationEmailRequired: "The 'Email' is required",
-        validationNameLength: "The name cannot be one character"
+        validationNameLength: "The name cannot be one character",
+        continueOn: "Continue",
+        signIn: "SIGN IN"
     }
 }

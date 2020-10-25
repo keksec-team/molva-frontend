@@ -78,11 +78,13 @@ function Project(props) {
                                 {
                                     width >= 1000 ?
                                         project.files != null ?
-                                            <GridList cellHeight={width > 1200 ? 600 : 400} className={styles.gridList}
+                                            <GridList cellHeight={width > 1200 ? 600 : 400}
+                                                      className={styles.gridList}
                                                       cols={3}
                                                       spacing={25}>
                                                 {project.files.map((projectFile, i) => (
-                                                    <GridListTile classes={{tile: styles.tile}} key={projectFile.url}
+                                                    <GridListTile classes={{tile: styles.tile}}
+                                                                  key={projectFile.url}
                                                                   cols={grid[i]}>
                                                         {
                                                             projectFile.type === "image" ?

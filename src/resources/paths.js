@@ -5,6 +5,7 @@ export const pages = {
     ABOUT: "about",
     PROJECT: "project",
     PROJECTS: "projects",
+    CREATORS: "creators",
     CONTACTS: "contacts",
     LOGIN: "login"
 }
