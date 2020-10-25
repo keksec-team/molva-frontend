@@ -1,6 +1,6 @@
 .form {
     width: 15vw;
-    padding: 1vw;
+    padding: 2vw;
     text-align: center;
 }
 
@@ -52,25 +52,31 @@ textarea {
 
 .signInTitle {
     font-family: CodeProBoldLC, serif;
-    font-size: 2em;
+    font-size: 2.2em;
     color: white;
+}
+
+@media only screen and (max-width: 1450px) {
+    .form {
+        width: 25vw;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .form {
+        width: 35vw;
+    }
 }
 
 @media only screen and (max-width: 650px) {
     .form {
-        font-size: 1.5em;
         width: auto;
-        margin-left: 10vw;
-        margin-right: 10vw;
-        margin-bottom: 6vh;
+        padding: 5vw;
     }
+
     .button {
         display: inline-block;
-        font-size: 0.7em;
+        font-size: 1.15em;
         margin: 5vh 0 0;
     }
-}
-
-@media only screen and (max-width: 350px) {
-
 }

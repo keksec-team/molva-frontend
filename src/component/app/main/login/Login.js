@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 import {setLoginPageActive} from "../../../../store/actions/navbarActions";
 import {changeLoginPageActive} from "../../../../service/appStateService";
 import LoginForm from "./form/LoginForm";
-import {resolvePath} from "../../../../resources/paths";
 import Fade from "@material-ui/core/Fade";
 
 function Login(props) {
@@ -17,7 +16,7 @@ function Login(props) {
         <Fade in={true} timeout={400} mountOnEnter unmountOnExit>
             <div className={styles.login}>
                 <img src={require('../../../../assets/leftarrow.svg')}
-                     className={styles.backArrow}
+                     className={`${styles.logo} ${styles.backArrow}`}
                      onClick={() => props.history.goBack()}
                      alt="Back arrow"/>
                 <div className={styles.centerContainer}>

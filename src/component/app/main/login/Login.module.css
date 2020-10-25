@@ -33,14 +33,23 @@
     position: absolute;
     left: 0;
     top: 0;
-    margin-left: 2.5vw;
-    margin-top: 2.5vw;
+    margin-left: 2vw;
+    margin-top: 2vw;
+    z-index: 2;
     cursor: pointer;
 }
 
 @media only screen and (max-width: 650px) {
+    .bigLogo {
+        width: 30vmin;
+        height: 30vmin;
+    }
+
+
     .backArrow {
+        height: 1.8em;
+        width: 1.08em;
+        margin-top: 6vw !important;
         margin-left: 5vw;
-        margin-top: 5vw;
     }
 }

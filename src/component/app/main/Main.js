@@ -3,8 +3,8 @@ import {connect} from 'react-redux';
 import styles from "./Main.module.css";
 import Navbar from "./controls/navbar/Navbar";
 import LanguageSwitch from "./controls/switch/LanguageSwitch";
-import {BrowserRouter} from "react-router-dom";
-import {Route, Redirect} from "react-router";
+import {BrowserRouter, Route} from "react-router-dom";
+import {Redirect} from "react-router";
 import Home from "./home/Home";
 import About from "./about/About";
 import Contacts from "./contacts/Contacts";
@@ -19,9 +19,7 @@ function Main(props) {
     return (
         <div className="main">
             <BrowserRouter>
-                {
-                    loginPageActive ? "" : <Navbar/>
-                }
+                <Navbar/>
                 <div className={styles.screen} id="screen">
                     <Route exact path="/">
                         <Redirect to={resolvePath(pages.HOME)}/>

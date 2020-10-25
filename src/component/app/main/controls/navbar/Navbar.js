@@ -9,13 +9,16 @@ import Drawer from "@material-ui/core/Drawer";
 import MenuIcon from '@material-ui/icons/Menu';
 
 function Navbar(props) {
-    const {dispatch} = props;
+    const {dispatch, loginPageActive} = props;
     let {width} = useWindowSize();
     return (
         <div className={styles.navbar}>
-            <Link to="/login">
-                <img src={require('../../../../../assets/logo.svg')} className={styles.logo} alt="Logotype"/>
-            </Link>
+            {
+                loginPageActive ? "" :
+                    <Link to="/login">
+                        <img src={require('../../../../../assets/logo.svg')} className={styles.logo} alt="Logotype"/>
+                    </Link>
+            }
             <MenuIcon classes={{root: styles.hamburger}}
                       onClick={() => changeNavbarToggled(!props.isToggled, dispatch)}/>
             {(width <= 650) ? (
@@ -25,13 +28,14 @@ function Navbar(props) {
                         onClick={() => changeNavbarToggled(!props.isToggled, dispatch)}>
                     <Menu/>
                 </Drawer>
-            ) : <Menu/>}
+            ) : loginPageActive ? "" : <Menu/>}
         </div>
     );
 }
 
 const mapStateToProps = state => ({
-    isToggled: state.controls.navbarToggled
+    isToggled: state.controls.navbarToggled,
+    loginPageActive: state.controls.loginPageActive
 })
 
 export default connect(mapStateToProps)(Navbar);
