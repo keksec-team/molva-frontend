@@ -36,7 +36,7 @@ function LoginForm(props) {
                     id="input-login"
                     label={strings.loginFormLogin}
                     type="text"
-                    helperText={errors.name?.message}
+                    helperText={errors.login?.message}
                     className={classes.margin}
                     inputProps={{
                         maxLength: 30,
@@ -50,7 +50,7 @@ function LoginForm(props) {
                         },
                     })}
                     autoComplete='login'
-                    error={errors.name}
+                    error={errors.login}
                 />
 
                 <CustomInputField
@@ -58,7 +58,7 @@ function LoginForm(props) {
                     variant="filled"
                     id="input-password"
                     label={strings.loginFormPassword}
-                    helperText={errors.phone?.message}
+                    helperText={errors.password?.message}
                     maxLength={2}
                     className={classes.margin}
                     inputProps={{
