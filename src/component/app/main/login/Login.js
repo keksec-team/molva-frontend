@@ -16,7 +16,7 @@ function Login(props) {
         <Fade in={true} timeout={400} mountOnEnter unmountOnExit>
             <div className={styles.login}>
                 <img src={require('../../../../assets/leftarrow.svg')}
-                     className={`${styles.logo} ${styles.backArrow}`}
+                     className={styles.backArrow}
                      onClick={() => props.history.goBack()}
                      alt="Back arrow"/>
                 <div className={styles.centerContainer}>

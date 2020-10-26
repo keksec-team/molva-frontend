@@ -91,7 +91,11 @@ export let strings = {
         validationEmailWrongPattern:"Invalid email address",
         validationNameRequired: "The 'Name' is required",
         validationEmailRequired: "The 'Email' is required",
+        validationLoginRequired: "The 'Login' is required",
+        validationPasswordRequired: "The 'Password' is required",
         validationNameLength: "The name cannot be one character",
+        validationLoginLength: "The login cannot be one character",
+        validationPasswordLength: "The password cannot be one character",
         continueOn: "Continue",
         signIn: "SIGN IN"
     }
