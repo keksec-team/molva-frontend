@@ -40,9 +40,13 @@
 }
 
 @media only screen and (max-width: 650px) {
+    .login {
+        padding-top: 15vmin;
+    }
+
     .bigLogo {
-        width: 30vmin;
-        height: 30vmin;
+        width: 25vmin;
+        height: 25vmin;
     }
 
 
