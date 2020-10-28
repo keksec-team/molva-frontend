@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./LoadingIndicator.module.css"
 import Loader from 'react-loader-spinner'
-import useWindowSize from "../main/control/helpers/useWindowSize";
+import useWindowSize from "../../main/controls/helpers/useWindowSize";
 
 export const LoadingIndicator = (props) => {
     const { previewSize } = props;

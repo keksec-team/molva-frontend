@@ -2,7 +2,7 @@ import {changeToDarkTheme, changeToLightTheme} from "../store/actions/themeActio
 import {locales} from "../resources/languages";
 import {changeToEnglishLanguage, changeToRussianLanguage} from "../store/actions/languageActions";
 import {themes} from "../resources/themes";
-import {setToggledAction} from "../store/actions/navbarActions";
+import {setLoginPageActive, setToggledAction} from "../store/actions/navbarActions";
 
 export const changeTheme = (changeTo, dispatch) => {
     switch (changeTo) {
@@ -28,4 +28,8 @@ export const changeLanguage = (locale, dispatch) => {
 
 export const changeNavbarToggled = (isToggled, dispatch) => {
     return dispatch(setToggledAction(isToggled))
+}
+
+export const changeLoginPageActive = (isActive, dispatch) => {
+    return dispatch(setLoginPageActive(isActive))
 }

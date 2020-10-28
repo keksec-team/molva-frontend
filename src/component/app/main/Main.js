@@ -1,19 +1,21 @@
 import React from "react";
 import {connect} from 'react-redux';
 import styles from "./Main.module.css";
-import Navbar from "./control/navbar/Navbar";
-import LanguageSwitch from "./control/switch/LanguageSwitch";
-import {BrowserRouter} from "react-router-dom";
-import {Route, Redirect} from "react-router";
+import Navbar from "./controls/navbar/Navbar";
+import LanguageSwitch from "./controls/switch/LanguageSwitch";
+import {BrowserRouter, Route} from "react-router-dom";
+import {Redirect} from "react-router";
 import Home from "./home/Home";
 import About from "./about/About";
 import Contacts from "./contacts/Contacts";
 import Projects from "./projects/Projects";
-import Social from "./control/social/Social";
+import Social from "./controls/social/Social";
 import Project from "./project/Project";
+import Login from "./login/Login";
 import {pages, resolvePath} from "../../../resources/paths";
 
-function Main() {
+function Main(props) {
+    const {loginPageActive} = props;
     return (
         <div className="main">
             <BrowserRouter>
@@ -27,11 +29,14 @@ function Main() {
                     <Route path={resolvePath(pages.PROJECT)} component={Project}/>
                     <Route path={resolvePath(pages.PROJECTS)} component={Projects}/>
                     <Route path={resolvePath(pages.CONTACTS)} component={Contacts}/>
+                    <Route path={resolvePath(pages.LOGIN)} component={Login}/>
                 </div>
                 <div className={styles.mainSwitchContainer}>
                     <LanguageSwitch/>
                 </div>
-                <Social/>
+                {
+                    loginPageActive ? "" : <Social/>
+                }
             </BrowserRouter>
         </div>
     );
@@ -40,6 +45,7 @@ function Main() {
 const mapStateToProps = state => ({
     theme: state.style.theme,
     isToggled: state.controls.navbarToggled,
+    loginPageActive: state.controls.loginPageActive,
     locale: state.language.locale
 })
 

@@ -1,0 +1,59 @@
+.login {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    min-width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("/loginBackground.png");
+}
+
+.loginFormContainer {
+    background-color: var(--background-color);
+    border-radius: 8px;
+    margin-top: 6vh;
+}
+
+.centerContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: -20vh;
+}
+
+.bigLogo {
+    margin: auto;
+    width: 15vmin;
+    height: 15vmin;
+}
+
+.backArrow {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-left: 2vw;
+    margin-top: 2vw;
+    z-index: 2;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 650px) {
+    .login {
+        padding-top: 15vmin;
+    }
+
+    .bigLogo {
+        width: 25vmin;
+        height: 25vmin;
+    }
+
+
+    .backArrow {
+        height: 1.8em;
+        width: 1.08em;
+        margin-top: 6vw !important;
+        margin-left: 5vw;
+    }
+}

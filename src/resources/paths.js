@@ -5,7 +5,9 @@ export const pages = {
     ABOUT: "about",
     PROJECT: "project",
     PROJECTS: "projects",
-    CONTACTS: "contacts"
+    CREATORS: "creators",
+    CONTACTS: "contacts",
+    LOGIN: "login"
 }
 
 export function resolvePath(page) {

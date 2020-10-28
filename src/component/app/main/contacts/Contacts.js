@@ -4,22 +4,25 @@ import {getStringsByLocale} from "../../../../resources/languages";
 import styles from "./Contacts.module.css";
 import {Slide} from "@material-ui/core";
 import ReactHookForm from "./form/ReactHookForm";
+import Fade from "@material-ui/core/Fade";
 
 
 function Contacts(props) {
     let strings = getStringsByLocale(props.locale);
     return (
-        <div className={styles.contacts}>
-            <div className={styles.contactsFlexContainer}>
-                <Slide direction={"right"} in={true} mountOnEnter unmountOnExit>
-                    <div className={styles.text}>
-                        <h1 className={styles.title}>{strings.contactsTitle}</h1>
-                        <p className={styles.paragraph}>{strings.contactsParagraph}</p>
-                    </div>
-                </Slide>
-                <ReactHookForm/>
+        <Fade in={true} timeout={400} mountOnEnter unmountOnExit>
+            <div className={styles.contacts}>
+                <div className={styles.contactsFlexContainer}>
+                    <Slide direction={"right"} in={true} mountOnEnter unmountOnExit>
+                        <div className={styles.text}>
+                            <h1 className={styles.title}>{strings.contactsTitle}</h1>
+                            <p className={styles.paragraph}>{strings.contactsParagraph}</p>
+                        </div>
+                    </Slide>
+                    <ReactHookForm/>
+                </div>
             </div>
-        </div>
+        </Fade>
     );
 }
 

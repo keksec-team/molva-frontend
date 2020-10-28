@@ -31,6 +31,7 @@
     margin-right: 5vw;
     margin-top: 5vw;
     display: none !important;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 650px) {

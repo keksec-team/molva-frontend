@@ -1,0 +1,82 @@
+.form {
+    width: 15vw;
+    padding: 2vw;
+    text-align: center;
+}
+
+
+.fields {
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active  {
+    -webkit-border-top-left-radius: 0 !important;
+    -webkit-border-top-right-radius: 0 !important;
+    -webkit-text-fill-color: var(--highlighted-text);
+    -webkit-box-shadow: 0 0 0 30px var(--background-color-dark) inset !important;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+textarea {
+    overflow: auto;
+    resize: none;
+}
+
+.field:focus {
+    color: var(--text-color-gray-light) !important;
+    outline: none !important;
+    border-bottom: 2px solid var(--highlighted-text);
+}
+
+.field:hover {
+    width: 100%;
+
+}
+
+.button {
+    margin-top: 4vh;
+    font-size: 1.5em;
+    padding-right: 1.5vw;
+    padding-left: 1.5vw;
+}
+
+.signInTitle {
+    font-family: CodeProBoldLC, serif;
+    font-size: 2.2em;
+    color: white;
+}
+
+@media only screen and (max-width: 1450px) {
+    .form {
+        width: 25vw;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .form {
+        width: 35vw;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .form {
+        width: auto;
+        padding: 5vw;
+    }
+
+    .button {
+        display: inline-block;
+        font-size: 1.15em;
+        margin: 5vh 0 0;
+    }
+}
