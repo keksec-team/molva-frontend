@@ -1,7 +1,5 @@
 import styles from "./ProjectFiles.module.css";
 import React from "react";
-import {Slide} from "@material-ui/core";
-import Fade from "@material-ui/core/Fade";
 import Preview from "../../projects/preview/Preview";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
