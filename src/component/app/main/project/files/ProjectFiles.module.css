@@ -1,0 +1,40 @@
+.projectFiles {
+    padding: 2vh 10vw 10vw;
+}
+
+.gridList {
+    width: 100%;
+}
+
+.tile {
+    border: 3px solid var(--highlighted-text);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.filesColumn {
+    width: 100%;
+    text-align: center;
+}
+
+.video {
+    min-width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50%; /* % of surrounding element */
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 1200px) {
+    .projectFiles {
+        padding: 2vh 5vw 5vw;
+    }
+}
