@@ -39,7 +39,7 @@ export const getGrid = (files) => {
     let result = []
     totalCells.forEach(cellsPerRow => {
         for (let i = 0; i < cellsPerRow; i++) {
-            result.push(3 / cellsPerRow);
+            result.push(4 / cellsPerRow);
         }
     })
     return result;

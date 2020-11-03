@@ -28,6 +28,7 @@ function Preview(props) {
         <img src={activeSrc} className={styles.previewPos} alt=""/> :
         <Video activeId={"preview-" + activeId}
                activeSrc={activeSrc}
+               className={styles.video}
                autoplay={autoplay}
                controls={controls}
                type="video/mp4"/>
