@@ -12,7 +12,7 @@ function Navbar(props) {
     const {dispatch, visible, loginPageActive} = props;
     let {width} = useWindowSize();
     return (
-        <div className={styles.navbar} style={(width <= 650) ? {} : { top: visible ? '0' : '-10vmin' }}>
+        <div className={styles.navbar} style={(width <= 650) ? {} : { top: visible ? '0' : '-12vmin' }}>
             {
                 loginPageActive ? "" :
                     <Link to="/login">
