@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {connect} from 'react-redux';
 import styles from "./Main.module.css";
 import Navbar from "./controls/navbar/Navbar";
@@ -13,13 +13,27 @@ import Social from "./controls/social/Social";
 import Project from "./project/Project";
 import Login from "./login/Login";
 import {pages, resolvePath} from "../../../resources/paths";
+import {debounce} from "./controls/helpers/debounce";
 
 function Main(props) {
     const {loginPageActive} = props;
+    const [prevScrollPos, setPrevScrollPos] = useState(0);
+    const [visible, setVisible] = useState(true);
+
+    const handleScroll = debounce(() => {
+        const currentScrollPos = window.pageYOffset;
+        setVisible((prevScrollPos > currentScrollPos && prevScrollPos - currentScrollPos > 70) || currentScrollPos < 10);
+        setPrevScrollPos(currentScrollPos);
+    }, 100);
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [prevScrollPos, visible, handleScroll]);
     return (
         <div className="main">
             <BrowserRouter>
-                <Navbar/>
+                <Navbar visible={visible}/>
                 <div className={styles.screen} id="screen">
                     <Route exact path="/">
                         <Redirect to={resolvePath(pages.HOME)}/>
@@ -32,10 +46,10 @@ function Main(props) {
                     <Route path={resolvePath(pages.LOGIN)} component={Login}/>
                 </div>
                 <div className={styles.mainSwitchContainer}>
-                    <LanguageSwitch/>
+                    <LanguageSwitch visible={visible}/>
                 </div>
                 {
-                    loginPageActive ? "" : <Social/>
+                    loginPageActive ? "" : <Social visible={visible}/>
                 }
             </BrowserRouter>
         </div>

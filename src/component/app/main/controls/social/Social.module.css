@@ -8,6 +8,7 @@
     color: var(--default-text);
     margin-bottom: 3vh;
     margin-left: 2vw;
+    transition: bottom 0.4s;
 }
 
 .social {

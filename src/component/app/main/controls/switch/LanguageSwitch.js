@@ -5,9 +5,10 @@ import useWindowSize from "../helpers/useWindowSize";
 import styles from "./LanguageSwitch.module.css";
 
 function LanguageSwitch(props) {
+    const {visible} = props;
     let {width} = useWindowSize();
     return (
-        <div className={styles.localesContainer}>
+        <div className={styles.localesContainer} style={(width <= 650) ? {} : { bottom: visible ? '0' : '-10vmin' }}>
             <Locales/>
         </div>
     );
