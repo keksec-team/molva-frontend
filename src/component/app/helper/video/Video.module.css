@@ -5,5 +5,65 @@
     position: absolute;
     left: 50%;
     top: 50%;
+    background-color: black;
     transform: translate(-50%, -50%);
+}
+
+.videoContainer {
+    min-width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.playBtn {
+    opacity: 0;
+    position: absolute;
+    left: calc(50% - 100px);
+    top: calc(50% - 100px);
+    pointer-events: none
+}
+
+.hiddenBtn {
+    visibility: hidden;
+}
+
+.changeOpacityAndScale {
+    animation: opacityAndScaleAnimation 0.5s;
+}
+
+@keyframes opacityAndScaleAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+    25% {
+        opacity: 0.5;
+        transform: scale(1.25);
+        -webkit-transform: scale(1.25);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
+        -webkit-transform: scale(1.5);
+    }
+    75% {
+        opacity: 0.5;
+        transform: scale(1.25);
+        -webkit-transform: scale(1.25);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .playBtn {
+        width: 50px;
+        height: 50px;
+        left: calc(50% - 25px);
+        top: calc(50% - 25px);
+    }
 }

@@ -10,6 +10,7 @@
     font-family: Comfortaa, serif;
     font-size: var(--controls-font-size);
     z-index: 1;
+    transition: top 0.4s;
 }
 
 .navbar > * {

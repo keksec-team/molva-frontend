@@ -24,15 +24,6 @@
     text-align: center;
 }
 
-.video {
-    min-width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 50%; /* % of surrounding element */
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
 @media only screen and (max-width: 1200px) {
     .projectFiles {
         padding: 2vh 5vw 5vw;

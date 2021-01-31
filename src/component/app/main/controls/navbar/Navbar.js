@@ -1,6 +1,6 @@
 import styles from "./Navbar.module.css";
 import {connect} from "react-redux";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {changeNavbarToggled} from "../../../../../service/appStateService";
 import useWindowSize from "../helpers/useWindowSize";
 import Menu from "./menu/Menu";
@@ -9,10 +9,10 @@ import Drawer from "@material-ui/core/Drawer";
 import MenuIcon from '@material-ui/icons/Menu';
 
 function Navbar(props) {
-    const {dispatch, loginPageActive} = props;
+    const {dispatch, visible, loginPageActive} = props;
     let {width} = useWindowSize();
     return (
-        <div className={styles.navbar}>
+        <div className={styles.navbar} style={(width <= 650) ? {} : { top: visible ? '0' : '-12vmin' }}>
             {
                 loginPageActive ? "" :
                     <Link to="/login">
